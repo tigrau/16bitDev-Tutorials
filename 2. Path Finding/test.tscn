@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddvcgxn8u20lx"]
+
+[ext_resource type="PackedScene" uid="uid://dq2ke5nyyf0ar" path="res://2. Path Finding/player.tscn" id="1_7n4gp"]
+[ext_resource type="PackedScene" uid="uid://cc0grspgjq2k0" path="res://2. Path Finding/enemy.tscn" id="2_woq34"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ty3p4"]
+vertices = PackedVector2Array(42, 160, 25, 17, 1093, 22, 286, 147, 1072, 460, 1085, 585, 50, 585, 956, 469, 943, 335, 383, 336, 376, 244, 929, 237, 1075, 244, 1072, 459, 294, 471, 42, 161, 1092, 141)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11, 12), PackedInt32Array(8, 12, 13, 7), PackedInt32Array(7, 13, 4), PackedInt32Array(14, 7, 6), PackedInt32Array(3, 14, 6, 15, 0), PackedInt32Array(3, 2, 16)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(14, 7, 32, 161, 40, 595, 308, 595, 1096, 595, 1082, 459, 1086, 235, 930, 227, 366, 235, 374, 347, 934, 345, 945.484, 459.376, 304.333, 461.142, 296, 157, 1102, 151, 1104, 13)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[node name="test" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_7n4gp")]
+position = Vector2(716, 234)
+
+[node name="Enemy" parent="." instance=ExtResource("2_woq34")]
+position = Vector2(238, 236)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_ty3p4")
