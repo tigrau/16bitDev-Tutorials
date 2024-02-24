@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw54uban72615"]
+
+[ext_resource type="Script" path="res://5. Save and Load/spawner.gd" id="1_7lcph"]
+[ext_resource type="PackedScene" uid="uid://d2sutv0h0p3n1" path="res://5. Save and Load/entity.tscn" id="2_0kf83"]
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource("1_7lcph")
+object = ExtResource("2_0kf83")
+object_speed = 50.0
+
+[node name="RespawnTime" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="RespawnTime" to="." method="_on_respawn_time_timeout"]
