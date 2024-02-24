@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://2a3et7d25n4m"]
+
+[ext_resource type="Script" path="res://3. Camera Shake/advanced_camera.gd" id="1_66du1"]
+[ext_resource type="Texture2D" uid="uid://5dg1a84djp5k" path="res://icon.svg" id="2_ihtie"]
+
+[node name="AdvancedCamera" type="Camera2D"]
+script = ExtResource("1_66du1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ihtie")

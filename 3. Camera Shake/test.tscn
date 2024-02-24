@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://crynq3fp0fycj"]
+
+[ext_resource type="PackedScene" uid="uid://2a3et7d25n4m" path="res://3. Camera Shake/advanced_camera.tscn" id="1_hk7lp"]
+[ext_resource type="Texture2D" uid="uid://5dg1a84djp5k" path="res://icon.svg" id="2_36bf8"]
+
+[node name="test" type="Node2D"]
+
+[node name="AdvancedCamera" parent="." instance=ExtResource("1_hk7lp")]
+decay = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(233, 133)
+texture = ExtResource("2_36bf8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(242, -162)
+texture = ExtResource("2_36bf8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-202, -180)
+texture = ExtResource("2_36bf8")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-205, 125)
+texture = ExtResource("2_36bf8")
