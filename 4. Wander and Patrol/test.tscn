@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://8nqe2av724b5"]
+
+[ext_resource type="PackedScene" uid="uid://by0o1iajgxrbf" path="res://4. Wander and Patrol/enemy.tscn" id="1_iemvf"]
+
+[node name="test" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_iemvf")]
+
+[node name="Marker2D" type="Marker2D" parent="." groups=["FirstEnemy"]]
+position = Vector2(284, 176)
+
+[node name="Marker2D2" type="Marker2D" parent="." groups=["FirstEnemy"]]
+position = Vector2(812, 188)
+
+[node name="Marker2D3" type="Marker2D" parent="." groups=["FirstEnemy"]]
+position = Vector2(548, 468)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://blip4kfy26j6y"]
+
+[ext_resource type="Script" path="res://4. Wander and Patrol/wander.gd" id="1_ksryk"]
+
+[node name="Wander" type="Node2D"]
+script = ExtResource("1_ksryk")

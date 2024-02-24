@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://by0o1iajgxrbf"]
+
+[ext_resource type="Texture2D" uid="uid://5dg1a84djp5k" path="res://icon.svg" id="1_0xp62"]
+[ext_resource type="Script" path="res://4. Wander and Patrol/enemy.gd" id="1_hj3vq"]
+[ext_resource type="PackedScene" uid="uid://blip4kfy26j6y" path="res://4. Wander and Patrol/wander.tscn" id="2_j3vq7"]
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("wander_direction")]
+script = ExtResource("1_hj3vq")
+wander_direction = NodePath("Wander")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0xp62")
+
+[node name="Wander" parent="." instance=ExtResource("2_j3vq7")]
+group_name = "FirstEnemy"
