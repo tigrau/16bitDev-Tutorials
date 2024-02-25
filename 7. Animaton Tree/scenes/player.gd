@@ -25,11 +25,12 @@ func _process(delta: float) -> void:
 		set_swing(true)
 
 func set_swing(value = false):
-	swing = false
+
+	swing = value
 	animation_tree["parameters/conditions/swing"] = value
 	
 
-func set_walking(value: bool):
+func set_walking(value: bool = false):
 	animation_tree["parameters/conditions/is_walking"] = value
 	animation_tree["parameters/conditions/idle"] = not value
 	

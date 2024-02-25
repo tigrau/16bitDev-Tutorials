@@ -805,6 +805,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_r84ti"]
 length = 0.6
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1106,17 +1107,17 @@ advance_condition = &"swing"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x2525"]
 switch_mode = 2
 advance_mode = 2
-advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ghxli"]
+states/Start/position = Vector2(225, 100)
 states/attack/node = SubResource("AnimationNodeBlendSpace2D_0s4xs")
 states/attack/position = Vector2(416, 9)
 states/idle/node = SubResource("AnimationNodeBlendSpace2D_n23iu")
-states/idle/position = Vector2(411, 100)
+states/idle/position = Vector2(416, 100)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_t8usd")
-states/walk/position = Vector2(556, 100)
+states/walk/position = Vector2(563, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6d5l5"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_3puue"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_3eifj"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_586hu"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_x2525")]
-graph_offset = Vector2(-20, -71)
+graph_offset = Vector2(-44, -67)
 
 [node name="player" type="CharacterBody2D"]
 texture_filter = 1
@@ -1125,7 +1126,6 @@ script = ExtResource("1_dmeey")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mwdn1")
 animation = &"idle_left"
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1138,9 +1138,9 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeStateMachine_ghxli")
 anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/idle = false
+parameters/conditions/idle = true
 parameters/conditions/is_walking = false
 parameters/conditions/swing = false
 parameters/attack/blend_position = Vector2(0, 0)
-parameters/idle/blend_position = Vector2(-0.00308961, -0.00484574)
+parameters/idle/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(0, 0)
