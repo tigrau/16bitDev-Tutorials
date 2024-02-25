@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvorbiowlysgj"]
+[gd_scene load_steps=21 format=3 uid="uid://dvorbiowlysgj"]
 
 [sub_resource type="Gradient" id="Gradient_wq4ba"]
 offsets = PackedFloat32Array(0, 0.513716, 1)
@@ -68,6 +68,49 @@ scale_min = 2.0
 scale_max = 2.0
 color_ramp = SubResource("GradientTexture1D_7nf6q")
 
+[sub_resource type="Gradient" id="Gradient_2x2je"]
+offsets = PackedFloat32Array(0, 0.818452, 1)
+colors = PackedColorArray(0, 0.290196, 1, 1, 0.335773, 0.510244, 0.999984, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_36ryl"]
+gradient = SubResource("Gradient_2x2je")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v5tuo"]
+particle_flag_disable_z = true
+spread = 5.0
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
+gravity = Vector3(0, 30, 0)
+color_ramp = SubResource("GradientTexture1D_36ryl")
+
+[sub_resource type="Gradient" id="Gradient_jhvg4"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pc503"]
+gradient = SubResource("Gradient_jhvg4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wb8en"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 1, 1)
+direction = Vector3(-1, 1, 0)
+spread = 5.0
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_pc503")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1sfx0"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 1, 1)
+direction = Vector3(-1, 1, 0)
+spread = 5.0
+initial_velocity_min = 50.0
+initial_velocity_max = 70.0
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_pc503")
+
 [node name="Fire_particles" type="GPUParticles2D"]
 position = Vector2(101, 104)
 amount = 50
@@ -86,5 +129,22 @@ process_material = SubResource("ParticleProcessMaterial_qunap")
 explosiveness = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-2, 1)
+position = Vector2(27, 14)
 zoom = Vector2(10, 10)
+
+[node name="Spray" type="GPUParticles2D" parent="."]
+position = Vector2(10, -13)
+amount = 150
+process_material = SubResource("ParticleProcessMaterial_v5tuo")
+
+[node name="Rain_and_snow" type="GPUParticles2D" parent="."]
+position = Vector2(-21, -40)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_wb8en")
+lifetime = 2.0
+
+[node name="Rain_and_snow2" type="GPUParticles2D" parent="."]
+position = Vector2(143, -25)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_1sfx0")
+lifetime = 4.0

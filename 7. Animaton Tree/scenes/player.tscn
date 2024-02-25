@@ -1106,7 +1106,8 @@ advance_condition = &"swing"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x2525"]
 switch_mode = 2
-advance_mode = 2
+advance_mode = 0
+advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ghxli"]
 states/Start/position = Vector2(225, 100)
@@ -1117,7 +1118,7 @@ states/idle/position = Vector2(416, 100)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_t8usd")
 states/walk/position = Vector2(563, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6d5l5"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_3puue"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_3eifj"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_586hu"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_x2525")]
-graph_offset = Vector2(-44, -67)
+graph_offset = Vector2(-118, -91)
 
 [node name="player" type="CharacterBody2D"]
 texture_filter = 1
@@ -1126,6 +1127,7 @@ script = ExtResource("1_dmeey")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mwdn1")
 animation = &"idle_left"
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
