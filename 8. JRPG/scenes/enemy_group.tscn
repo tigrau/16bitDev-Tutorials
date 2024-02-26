@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc2jm8aoi7ki"]
+
+[ext_resource type="Script" path="res://8. JRPG/scenes/enemy_group.gd" id="1_1iwtd"]
+[ext_resource type="PackedScene" uid="uid://ddcpyvgesv50g" path="res://8. JRPG/scenes/character.tscn" id="1_qri4r"]
+
+[node name="EnemyGroup" type="Node2D"]
+script = ExtResource("1_1iwtd")
+
+[node name="Character" parent="." instance=ExtResource("1_qri4r")]
+
+[node name="Character2" parent="." instance=ExtResource("1_qri4r")]
+
+[node name="Character3" parent="." instance=ExtResource("1_qri4r")]
+
+[node name="Character4" parent="." instance=ExtResource("1_qri4r")]

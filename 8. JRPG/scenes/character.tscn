@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddcpyvgesv50g"]
+
+[ext_resource type="Script" path="res://8. JRPG/scenes/character.gd" id="1_13dyk"]
+[ext_resource type="Texture2D" uid="uid://choxnetkikqmk" path="res://8. JRPG/Battlers/World01_007_Pirate.png" id="1_46i6q"]
+[ext_resource type="Texture2D" uid="uid://b1sl8yf8lig8v" path="res://8. JRPG/Battlers/pngegg.png" id="2_yvaf6"]
+
+[sub_resource type="Animation" id="Animation_wlrvi"]
+resource_name = "hurt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(30, 30, 30, 1), Color(1, 1, 1, 1), Color(30, 30, 30, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fd126"]
+_data = {
+"hurt": SubResource("Animation_wlrvi")
+}
+
+[node name="Character" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_13dyk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_46i6q")
+
+[node name="Focus" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-99, 2)
+rotation = 1.5708
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_yvaf6")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -37.0
+offset_top = -80.0
+offset_right = 38.0
+offset_bottom = -53.0
+value = 100.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fd126")
+}

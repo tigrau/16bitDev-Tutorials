@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://we4gwxtrkqyg"]
+
+[ext_resource type="Script" path="res://8. JRPG/scenes/player_group.gd" id="1_6bb2q"]
+[ext_resource type="PackedScene" uid="uid://ddcpyvgesv50g" path="res://8. JRPG/scenes/character.tscn" id="1_p6p0s"]
+[ext_resource type="Texture2D" uid="uid://fruhpghdg2mf" path="res://8. JRPG/Battlers/Ready_00.png" id="2_meh7i"]
+[ext_resource type="Texture2D" uid="uid://q2ti508wlkca" path="res://8. JRPG/Battlers/Ready_00 #139.png" id="3_6riwa"]
+[ext_resource type="Texture2D" uid="uid://dafq0iuakflsn" path="res://8. JRPG/Battlers/Ready_00 #133.png" id="4_53x1t"]
+[ext_resource type="Texture2D" uid="uid://dqgg1jkd5shbn" path="res://8. JRPG/Battlers/Ready_00 #32.png" id="5_fmnn7"]
+
+[node name="PlayerGroup" type="Node2D"]
+script = ExtResource("1_6bb2q")
+
+[node name="Character" parent="." instance=ExtResource("1_p6p0s")]
+
+[node name="Sprite2D" parent="Character" index="0"]
+scale = Vector2(4, 4)
+texture = ExtResource("2_meh7i")
+
+[node name="Character2" parent="." instance=ExtResource("1_p6p0s")]
+
+[node name="Sprite2D" parent="Character2" index="0"]
+scale = Vector2(4, 4)
+texture = ExtResource("3_6riwa")
+
+[node name="Character3" parent="." instance=ExtResource("1_p6p0s")]
+
+[node name="Sprite2D" parent="Character3" index="0"]
+scale = Vector2(4, 4)
+texture = ExtResource("4_53x1t")
+
+[node name="Character4" parent="." instance=ExtResource("1_p6p0s")]
+
+[node name="Sprite2D" parent="Character4" index="0"]
+scale = Vector2(4, 4)
+texture = ExtResource("5_fmnn7")
+
+[editable path="Character"]
+[editable path="Character2"]
+[editable path="Character3"]
+[editable path="Character4"]
