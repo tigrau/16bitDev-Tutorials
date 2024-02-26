@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdp085xtw5a2g"]
+
+[ext_resource type="Script" path="res://9. API calls/api_test.gd" id="1_x3a5t"]
+[ext_resource type="PackedScene" uid="uid://bu7oartgwsxkn" path="res://9. API calls/api_button.tscn" id="2_3hbsv"]
+
+[node name="API_TEST" type="Node2D"]
+script = ExtResource("1_x3a5t")
+button = ExtResource("2_3hbsv")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_right = 306.0
+offset_bottom = 642.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 498.0
+offset_top = 6.0
+offset_right = 1149.0
+offset_bottom = 660.0
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on__request_completed"]

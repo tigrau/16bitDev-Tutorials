@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu7oartgwsxkn"]
+
+[ext_resource type="Script" path="res://9. API calls/api_button.gd" id="1_mjt7m"]
+
+[node name="API_Button" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_mjt7m")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_request_completed"]
