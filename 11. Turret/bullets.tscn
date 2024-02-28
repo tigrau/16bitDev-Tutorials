@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv2o0nt0b82l1"]
+
+[ext_resource type="Script" path="res://11. Turret/Bullets.gd" id="1_t2cvt"]
+[ext_resource type="Texture2D" uid="uid://5dg1a84djp5k" path="res://icon.svg" id="2_bpblw"]
+
+[node name="Bullets" type="Area2D"]
+script = ExtResource("1_t2cvt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_bpblw")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://gf3td6rnhbq5"]
+
+[ext_resource type="Script" path="res://11. Turret/turret.gd" id="1_wmwi8"]
+[ext_resource type="Texture2D" uid="uid://5dg1a84djp5k" path="res://icon.svg" id="1_yajlf"]
+[ext_resource type="PackedScene" uid="uid://dv2o0nt0b82l1" path="res://11. Turret/bullets.tscn" id="2_loilt"]
+
+[node name="Turret" type="Node2D"]
+script = ExtResource("1_wmwi8")
+ammo = ExtResource("2_loilt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yajlf")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -100.0
+offset_top = -156.0
+offset_right = -51.0
+offset_bottom = -133.0
+scale = Vector2(4.25714, 4.41176)
+text = "Turret
+"
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 100)
+collision_mask = 3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

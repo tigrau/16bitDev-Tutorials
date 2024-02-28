@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://1418krclfg7s"]
+
+[ext_resource type="Script" path="res://11. Turret/player.gd" id="1_ap06t"]
+[ext_resource type="Texture2D" uid="uid://5dg1a84djp5k" path="res://icon.svg" id="1_kotqs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rawm"]
+size = Vector2(128, 124)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_ap06t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kotqs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1rawm")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwji1hpuqglvt"]
+
+[ext_resource type="Script" path="res://12. Trail/CharacterBody2D.gd" id="1_ppn2i"]
+[ext_resource type="Texture2D" uid="uid://5dg1a84djp5k" path="res://icon.svg" id="2_gn33b"]
+[ext_resource type="PackedScene" uid="uid://dinynklf1cwyu" path="res://12. Trail/trail.tscn" id="3_0xkv8"]
+[ext_resource type="Script" path="res://12. Trail/trail2.gd" id="4_caqh6"]
+
+[sub_resource type="Curve" id="Curve_utc7l"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_fk4k4"]
+colors = PackedColorArray(1, 0.0666667, 0, 1, 1, 1, 0, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_ppn2i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_gn33b")
+
+[node name="Trail" parent="." instance=ExtResource("3_0xkv8")]
+top_level = true
+z_index = -1
+width = 60.0
+width_curve = SubResource("Curve_utc7l")
+gradient = SubResource("Gradient_fk4k4")
+script = ExtResource("4_caqh6")
+MAX_LENGTH = 30
