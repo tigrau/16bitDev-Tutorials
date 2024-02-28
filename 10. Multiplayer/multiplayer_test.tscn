@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyauq4ugi7dba"]
+
+[ext_resource type="Script" path="res://10. Multiplayer/multiplayer_test.gd" id="1_mtabi"]
+[ext_resource type="PackedScene" uid="uid://c5wmh2py22rwk" path="res://10. Multiplayer/basic_player.tscn" id="2_vsv5k"]
+
+[node name="Multiplayer_Test" type="Node2D"]
+script = ExtResource("1_mtabi")
+player_scene = ExtResource("2_vsv5k")
+
+[node name="Host" type="Button" parent="."]
+offset_left = 38.0
+offset_top = 295.0
+offset_right = 81.0
+offset_bottom = 326.0
+text = "host"
+
+[node name="Join" type="Button" parent="."]
+offset_left = 95.0
+offset_top = 296.0
+offset_right = 132.0
+offset_bottom = 327.0
+text = "join"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://10. Multiplayer/basic_player.tscn")
+spawn_path = NodePath("..")
+
+[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Join" to="." method="_on_join_pressed"]
