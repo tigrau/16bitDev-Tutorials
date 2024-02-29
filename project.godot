@@ -14,6 +14,10 @@ config/name="16 Bit Dev-tutorials"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/AS2P/plugin.cfg")
