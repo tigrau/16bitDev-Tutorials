@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddeleak238y4d"]
+
+[ext_resource type="Texture2D" uid="uid://bivabal4e1133" path="res://13. Duck Hunt/3DS - WarioWare Gold - Duck Hunt.png" id="1_4eecm"]
+[ext_resource type="Script" path="res://13. Duck Hunt/dog.gd" id="1_xbees"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebbfl"]
+atlas = ExtResource("1_4eecm")
+region = Rect2(192, 400, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ep1dr"]
+atlas = ExtResource("1_4eecm")
+region = Rect2(256, 400, 64, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mn6du"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebbfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ep1dr")
+}],
+"loop": true,
+"name": &"dog_laught",
+"speed": 5.0
+}]
+
+[node name="Dog" type="CharacterBody2D"]
+script = ExtResource("1_xbees")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mn6du")
+animation = &"dog_laught"
+autoplay = "dog_laught"

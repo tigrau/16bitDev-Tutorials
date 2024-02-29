@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0wt1hftkkhwd"]
+
+[ext_resource type="PackedScene" uid="uid://bip1pip3glaef" path="res://13. Duck Hunt/bird.tscn" id="1_bhct2"]
+[ext_resource type="Script" path="res://13. Duck Hunt/field.gd" id="1_u2fml"]
+[ext_resource type="Texture2D" uid="uid://bivabal4e1133" path="res://13. Duck Hunt/3DS - WarioWare Gold - Duck Hunt.png" id="2_ncr5p"]
+[ext_resource type="PackedScene" uid="uid://ddeleak238y4d" path="res://13. Duck Hunt/dog.tscn" id="4_5r1v1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dmve"]
+size = Vector2(1164, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbt82"]
+size = Vector2(78, 671)
+
+[node name="field" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_u2fml")
+bird_node = ExtResource("1_bhct2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Top" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(572, -23.5)
+shape = SubResource("RectangleShape2D_2dmve")
+
+[node name="Bottom" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(579, 432)
+shape = SubResource("RectangleShape2D_2dmve")
+
+[node name="Left" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-39, 326)
+shape = SubResource("RectangleShape2D_dbt82")
+
+[node name="Right" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1193, 326)
+shape = SubResource("RectangleShape2D_dbt82")
+
+[node name="BG" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(547, 237)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_ncr5p")
+region_enabled = true
+region_rect = Rect2(0, 17.2016, 512, 137.65)
+
+[node name="FG" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(550, 528)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_ncr5p")
+region_enabled = true
+region_rect = Rect2(0, 154.852, 512.39, 100.197)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Bullets" type="Label" parent="CanvasLayer"]
+offset_left = 300.0
+offset_top = 569.0
+offset_right = 340.0
+offset_bottom = 592.0
+
+[node name="Rounds" type="Label" parent="CanvasLayer"]
+offset_left = 327.0
+offset_top = 520.0
+offset_right = 367.0
+offset_bottom = 543.0
+
+[node name="Score" type="Label" parent="CanvasLayer"]
+offset_left = 706.0
+offset_top = 559.0
+offset_right = 746.0
+offset_bottom = 582.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="Dog" parent="." instance=ExtResource("4_5r1v1")]
+position = Vector2(584, 501)
+scale = Vector2(2.5, 2.5)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
