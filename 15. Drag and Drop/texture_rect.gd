@@ -1,5 +1,10 @@
 extends TextureRect
 
+var hand_full = false
+
+#func _unhandled_input(event: InputEvent) -> void:
+	#if Input.
+
 func _get_drag_data(at_position: Vector2) -> Variant:
 	
 	var preview_texture = TextureRect.new()
