@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://rg7or2c5t13l"]
+
+[ext_resource type="Texture2D" uid="uid://bv8tf6bnvabi1" path="res://18. Damage Popups/Dummy.png" id="1_42bvy"]
+[ext_resource type="Script" path="res://18. Damage Popups/PopupLocation.gd" id="2_di0kr"]
+[ext_resource type="PackedScene" uid="uid://x47nvhd4x3a4" path="res://18. Damage Popups/marker.tscn" id="3_ew4dv"]
+
+[node name="TargetDummy" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_42bvy")
+region_enabled = true
+region_rect = Rect2(0, 32, 16, 16)
+
+[node name="PopupLocation" type="Marker2D" parent="."]
+position = Vector2(0, -9)
+script = ExtResource("2_di0kr")
+damage_node = ExtResource("3_ew4dv")

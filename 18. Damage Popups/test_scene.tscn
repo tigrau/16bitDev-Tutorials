@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceb2n42mn67d4"]
+
+[ext_resource type="PackedScene" uid="uid://rg7or2c5t13l" path="res://18. Damage Popups/target_dummy.tscn" id="2_s46iq"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="TargetDummy" parent="." instance=ExtResource("2_s46iq")]
+position = Vector2(259, 106)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(261, 93)
+zoom = Vector2(10, 10)
