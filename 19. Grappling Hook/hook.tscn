@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0yoe25gjqd1y"]
+
+[ext_resource type="Texture2D" uid="uid://bayhebjqqc0ew" path="res://19. Grappling Hook/pngimg.com - chain_PNG10.png" id="1_q41je"]
+[ext_resource type="Script" path="res://19. Grappling Hook/hook.gd" id="2_o6viu"]
+
+[node name="Hook" type="Sprite2D"]
+texture_repeat = 2
+rotation = -1.5708
+texture = ExtResource("1_q41je")
+region_enabled = true
+region_rect = Rect2(0, 0, 356, 0)
+script = ExtResource("2_o6viu")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 5000)

@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://4ukau2vej0ni"]
+
+[ext_resource type="Script" path="res://19. Grappling Hook/Pivot.gd" id="1_4od73"]
+[ext_resource type="PackedScene" uid="uid://c0yoe25gjqd1y" path="res://19. Grappling Hook/hook.tscn" id="1_33vw3"]
+[ext_resource type="Script" path="res://19. Grappling Hook/Player.gd" id="1_pftg5"]
+[ext_resource type="Texture2D" uid="uid://5dg1a84djp5k" path="res://icon.svg" id="3_7gyrn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxi3b"]
+size = Vector2(984, 974)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kd8wk"]
+size = Vector2(115, 120)
+
+[node name="Test" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.1, 0.1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-2848, -1549)
+shape = SubResource("RectangleShape2D_uxi3b")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2692, -1547)
+shape = SubResource("RectangleShape2D_uxi3b")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_pftg5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(3.5625, 3.5625)
+texture = ExtResource("3_7gyrn")
+
+[node name="Pivot" type="Node2D" parent="Player"]
+script = ExtResource("1_4od73")
+
+[node name="Hook" parent="Player/Pivot" instance=ExtResource("1_33vw3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_kd8wk")
+
+[connection signal="hooked" from="Player/Pivot/Hook" to="Player" method="_on_hook_hooked"]
