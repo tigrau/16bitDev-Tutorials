@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bksbo3ntbvjmc"]
+[gd_scene load_steps=15 format=3 uid="uid://bksbo3ntbvjmc"]
 
 [ext_resource type="Script" path="res://20. Boss Fight/boss.gd" id="1_8m3hi"]
 [ext_resource type="Texture2D" uid="uid://cg03tfxgtbsma" path="res://17. Boss Battle/assets/lpc-monsters/bee.png" id="1_8orah"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" path="res://20. Boss Fight/states/follow.gd" id="6_0045d"]
 [ext_resource type="PackedScene" uid="uid://dqvtyibs4qts0" path="res://20. Boss Fight/bullet.tscn" id="6_c0l3l"]
 [ext_resource type="Script" path="res://20. Boss Fight/states/dash.gd" id="8_sx7vl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cypb6"]
+size = Vector2(20, 27)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvs1a"]
 atlas = ExtResource("1_8orah")
@@ -48,14 +51,17 @@ animations = [{
 [node name="Boss" type="CharacterBody2D"]
 script = ExtResource("1_8m3hi")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_cypb6")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_g7ycr")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.550636
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="Debug" type="Label" parent="."]
 offset_left = -20.0

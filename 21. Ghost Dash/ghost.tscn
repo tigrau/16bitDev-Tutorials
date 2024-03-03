@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://gg3rx5sqewud"]
+
+[ext_resource type="Texture2D" uid="uid://5dg1a84djp5k" path="res://icon.svg" id="1_q5bdb"]
+[ext_resource type="Script" path="res://21. Ghost Dash/ghost.gd" id="2_i8xxv"]
+
+[node name="Ghost" type="Sprite2D"]
+modulate = Color(0.486275, 0.486275, 0.486275, 1)
+show_behind_parent = true
+texture = ExtResource("1_q5bdb")
+script = ExtResource("2_i8xxv")
