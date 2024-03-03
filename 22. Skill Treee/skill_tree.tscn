@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://bg3bt10qhlnoy"]
+
+[ext_resource type="PackedScene" uid="uid://h7wrk8mv13tf" path="res://22. Skill Treee/skill_button.tscn" id="1_wtof0"]
+[ext_resource type="Texture2D" uid="uid://djnefep5hc3su" path="res://22. Skill Treee/assets/Barbarian_1.png" id="2_svjvn"]
+[ext_resource type="Texture2D" uid="uid://cvp3kljj5ebyl" path="res://22. Skill Treee/assets/Barbarian_3.png" id="4_fmy78"]
+[ext_resource type="Texture2D" uid="uid://d33ukr7n3jf66" path="res://22. Skill Treee/assets/Barbarian_4.png" id="5_2hoha"]
+[ext_resource type="Texture2D" uid="uid://dp8grtfeq2qfv" path="res://22. Skill Treee/assets/Barbarian_2.png" id="6_0h0r6"]
+[ext_resource type="Texture2D" uid="uid://dc5evaaexdjbk" path="res://22. Skill Treee/assets/Barbarian_5.png" id="6_lmo2f"]
+
+[node name="SkillTree" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(597, 489)
+zoom = Vector2(2.5, 2.5)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SkillButton" parent="." instance=ExtResource("1_wtof0")]
+layout_mode = 0
+offset_left = 597.0
+offset_top = 563.0
+offset_right = 637.0
+offset_bottom = 603.0
+texture_normal = ExtResource("2_svjvn")
+
+[node name="SkillButton" parent="SkillButton" instance=ExtResource("1_wtof0")]
+layout_mode = 0
+offset_left = 66.0
+offset_top = -62.0
+offset_right = 106.0
+offset_bottom = -22.0
+disabled = true
+texture_normal = ExtResource("6_0h0r6")
+
+[node name="SkillButton" parent="SkillButton/SkillButton" instance=ExtResource("1_wtof0")]
+layout_mode = 0
+offset_left = 57.0
+offset_top = -54.0
+offset_right = 97.0
+offset_bottom = -14.0
+disabled = true
+texture_normal = ExtResource("4_fmy78")
+
+[node name="SkillButton2" parent="SkillButton/SkillButton" instance=ExtResource("1_wtof0")]
+layout_mode = 0
+offset_left = -56.0
+offset_top = -55.0
+offset_right = -16.0
+offset_bottom = -15.0
+disabled = true
+texture_normal = ExtResource("5_2hoha")
+
+[node name="SkillButton2" parent="SkillButton" instance=ExtResource("1_wtof0")]
+layout_mode = 0
+offset_left = -67.0
+offset_top = -61.0
+offset_right = -27.0
+offset_bottom = -21.0
+disabled = true
+texture_normal = ExtResource("6_lmo2f")
