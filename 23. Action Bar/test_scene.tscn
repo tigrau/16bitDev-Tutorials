@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://1uxjcnht8mfq"]
+
+[ext_resource type="PackedScene" uid="uid://8yjav0x2ghwf" path="res://23. Action Bar/spell_button.tscn" id="1_kog1n"]
+[ext_resource type="Script" path="res://23. Action Bar/ActionBar.gd" id="1_kyxkb"]
+[ext_resource type="Texture2D" uid="uid://djnefep5hc3su" path="res://22. Skill Treee/assets/Barbarian_1.png" id="3_mrkne"]
+[ext_resource type="Texture2D" uid="uid://dp8grtfeq2qfv" path="res://22. Skill Treee/assets/Barbarian_2.png" id="4_fa3vb"]
+[ext_resource type="Texture2D" uid="uid://cvp3kljj5ebyl" path="res://22. Skill Treee/assets/Barbarian_3.png" id="5_3uo3i"]
+[ext_resource type="Texture2D" uid="uid://d33ukr7n3jf66" path="res://22. Skill Treee/assets/Barbarian_4.png" id="6_5tiy6"]
+[ext_resource type="Texture2D" uid="uid://dc5evaaexdjbk" path="res://22. Skill Treee/assets/Barbarian_5.png" id="7_25goo"]
+
+[node name="TestScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Debug" type="Label" parent="."]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 547.0
+offset_right = 463.0
+offset_bottom = 570.0
+
+[node name="ActionBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_kyxkb")
+
+[node name="Explosion" parent="ActionBar" instance=ExtResource("1_kog1n")]
+layout_mode = 2
+texture_normal = ExtResource("3_mrkne")
+
+[node name="Slide" parent="ActionBar" instance=ExtResource("1_kog1n")]
+layout_mode = 2
+texture_normal = ExtResource("4_fa3vb")
+
+[node name="BigFinger" parent="ActionBar" instance=ExtResource("1_kog1n")]
+layout_mode = 2
+texture_normal = ExtResource("5_3uo3i")
+
+[node name="Rocks" parent="ActionBar" instance=ExtResource("1_kog1n")]
+layout_mode = 2
+texture_normal = ExtResource("6_5tiy6")
+
+[node name="Cross" parent="ActionBar" instance=ExtResource("1_kog1n")]
+layout_mode = 2
+texture_normal = ExtResource("7_25goo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(580, 486)
+zoom = Vector2(2, 2)
