@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4tqpf7052lm"]
+
+[ext_resource type="PackedScene" uid="uid://bksbo3ntbvjmc" path="res://20. Boss Fight/boss.tscn" id="1_10hgb"]
+[ext_resource type="PackedScene" uid="uid://skx013act6qu" path="res://20. Boss Fight/player.tscn" id="2_06chr"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Boss" parent="." instance=ExtResource("1_10hgb")]
+
+[node name="Player" parent="." instance=ExtResource("2_06chr")]
+position = Vector2(160, 100)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 75)
+zoom = Vector2(2.13, 2.13)

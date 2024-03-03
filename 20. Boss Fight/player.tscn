@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://skx013act6qu"]
+
+[ext_resource type="Script" path="res://20. Boss Fight/player.gd" id="1_hyqe2"]
+[ext_resource type="Texture2D" uid="uid://5dg1a84djp5k" path="res://icon.svg" id="1_quhdr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2c2n"]
+size = Vector2(120, 118)
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_hyqe2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_quhdr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e2c2n")

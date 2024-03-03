@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqvtyibs4qts0"]
+
+[ext_resource type="Texture2D" uid="uid://5dg1a84djp5k" path="res://icon.svg" id="1_ic2ew"]
+[ext_resource type="Script" path="res://20. Boss Fight/bullet.gd" id="1_xv6bp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hj8ia"]
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_xv6bp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.234375, 0.25)
+texture = ExtResource("1_ic2ew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hj8ia")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
