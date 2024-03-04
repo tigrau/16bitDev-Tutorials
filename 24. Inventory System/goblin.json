@@ -1,0 +1,14 @@
+{
+  "0": {
+	"ItemId": 0,
+	"weight": 1
+  },
+  "1": {
+	"ItemId": 2,
+	"weight": 3
+  },
+  "2": {
+	"ItemId": 1,
+	"weight": 2
+  }
+}

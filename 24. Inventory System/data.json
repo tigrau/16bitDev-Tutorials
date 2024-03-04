@@ -1,0 +1,17 @@
+{
+	"0": {
+	  "Name": "Sword",
+	  "Texture": "sword.png",
+	  "Description": "Does cleave damage"
+	},
+	"1": {
+	  "Name": "Hammer",
+	  "Texture": "hammer.png",
+	  "Description": "Stuns enemy on hit"
+	},
+	"2": {
+	  "Name": "Torch",
+	  "Texture": "torch.png",
+	  "Description": "Lights the path"
+	}
+}

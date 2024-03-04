@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://0uag3lf5msuq"]
+
+[ext_resource type="Script" path="res://24. Inventory System/enemy.gd" id="1_j4t1h"]
+[ext_resource type="Texture2D" uid="uid://5dg1a84djp5k" path="res://icon.svg" id="2_5yqw7"]
+[ext_resource type="PackedScene" uid="uid://di7a8vos6bdvn" path="res://24. Inventory System/abstract_item.tscn" id="2_hvtko"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eprq4"]
+radius = 83.2947
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_j4t1h")
+item_node = ExtResource("2_hvtko")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5yqw7")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_eprq4")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

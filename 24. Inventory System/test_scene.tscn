@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7ojtcr4e8aft"]
+
+[ext_resource type="Script" path="res://24. Inventory System/Inventory.gd" id="1_qvf34"]
+[ext_resource type="Script" path="res://24. Inventory System/AddItem.gd" id="2_iho1v"]
+[ext_resource type="Script" path="res://24. Inventory System/Button.gd" id="3_4npk6"]
+[ext_resource type="PackedScene" uid="uid://doer40fuyavp4" path="res://24. Inventory System/goblin.tscn" id="4_3xdjh"]
+[ext_resource type="PackedScene" uid="uid://s7ambvdybjrt" path="res://24. Inventory System/player.tscn" id="4_tfmtw"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Inventory" type="ItemList" parent="UI"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qvf34")
+
+[node name="DevTool" type="CanvasLayer" parent="UI"]
+
+[node name="AddItem" type="Button" parent="UI/DevTool"]
+offset_left = 82.0
+offset_top = 298.0
+offset_right = 125.0
+offset_bottom = 329.0
+text = "ADD
+"
+script = ExtResource("2_iho1v")
+
+[node name="Button" type="Button" parent="UI/DevTool"]
+offset_left = 140.0
+offset_top = 298.0
+offset_right = 211.0
+offset_bottom = 329.0
+text = "RELOAD"
+script = ExtResource("3_4npk6")
+
+[node name="Player" parent="." instance=ExtResource("4_tfmtw")]
+position = Vector2(530, 450)
+
+[node name="Goblin" parent="." instance=ExtResource("4_3xdjh")]
+position = Vector2(156, 110)
+
+[node name="Goblin2" parent="." instance=ExtResource("4_3xdjh")]
+position = Vector2(346, 112)
+
+[node name="Goblin3" parent="." instance=ExtResource("4_3xdjh")]
+position = Vector2(544, 114)
+
+[node name="Goblin4" parent="." instance=ExtResource("4_3xdjh")]
+position = Vector2(736, 124)
+
+[node name="Goblin5" parent="." instance=ExtResource("4_3xdjh")]
+position = Vector2(928, 142)
+
+[connection signal="pressed" from="UI/DevTool/AddItem" to="UI/DevTool/AddItem" method="_on_pressed"]
+[connection signal="pressed" from="UI/DevTool/Button" to="UI/DevTool/Button" method="_on_pressed"]
