@@ -4,6 +4,9 @@ extends Sprite2D
 @onready var collision: CollisionShape2D = $Collision/CollisionShape2D
 @export var can_control: bool = false
 
+#func _physics_process(delta: float) -> void:
+	#region_rect = Rect2(position,Vector2(95,0))
+	
 func interpolate(lenght, duration = 0.1):
 	var tween_offset = get_tree().create_tween()
 	var tween_rect_h = get_tree().create_tween()
