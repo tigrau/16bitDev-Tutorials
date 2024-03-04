@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://ttxs1off0fwf"]
+
+[ext_resource type="Texture2D" uid="uid://862bmlffnf0j" path="res://25. Lightning/lightning.png" id="1_86xdw"]
+[ext_resource type="Script" path="res://25. Lightning/lightning.gd" id="2_hg608"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5gaxp"]
+radius = 200.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e4yh3"]
+radius = 30.0
+
+[node name="Lightning" type="Sprite2D"]
+texture_repeat = 2
+rotation = -1.5708
+texture = ExtResource("1_86xdw")
+region_enabled = true
+region_rect = Rect2(16, 0, 95, 0)
+script = ExtResource("2_hg608")
+
+[node name="Detection" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+shape = SubResource("CircleShape2D_5gaxp")
+disabled = true
+
+[node name="Collision" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+shape = SubResource("CircleShape2D_e4yh3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="area_entered" from="Detection" to="." method="_on_detection_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
