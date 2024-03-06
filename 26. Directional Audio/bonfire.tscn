@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://csdsmheh7kaft"]
+
+[ext_resource type="Texture2D" uid="uid://cva50olhfupfn" path="res://26. Directional Audio/Campfire36.png" id="1_fekov"]
+[ext_resource type="AudioStream" uid="uid://clh8xvnd0wkec" path="res://26. Directional Audio/fire.wav" id="2_4qr80"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f108"]
+atlas = ExtResource("1_fekov")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urkut"]
+atlas = ExtResource("1_fekov")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmadn"]
+atlas = ExtResource("1_fekov")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4540f"]
+atlas = ExtResource("1_fekov")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2i6ki"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f108")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urkut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmadn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4540f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bonfire" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_2i6ki")
+autoplay = "default"
+frame = 2
+frame_progress = 0.789969
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_4qr80")
+autoplay = true
+max_distance = 500.0
+bus = &"SFX"

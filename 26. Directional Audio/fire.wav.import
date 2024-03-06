@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://clh8xvnd0wkec"
+path="res://.godot/imported/fire.wav-52c5d9b3c3e4347cafa9b9b1f0fa68d7.sample"
+
+[deps]
+
+source_file="res://26. Directional Audio/fire.wav"
+dest_files=["res://.godot/imported/fire.wav-52c5d9b3c3e4347cafa9b9b1f0fa68d7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

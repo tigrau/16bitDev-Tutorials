@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://xgyw7aadr0tg"]
+
+[ext_resource type="PackedScene" uid="uid://dcjbjy2gnpda5" path="res://27. Boss Fight with Finite State Machine/boss.tscn" id="1_cm6hu"]
+[ext_resource type="PackedScene" uid="uid://bs0bl3xj51c7o" path="res://27. Boss Fight with Finite State Machine/player.tscn" id="2_hnp3n"]
+
+[node name="BossRoom" type="Node2D"]
+
+[node name="Boss" parent="." instance=ExtResource("1_cm6hu")]
+position = Vector2(580, 246)
+
+[node name="Player" parent="." instance=ExtResource("2_hnp3n")]
+position = Vector2(588, 568)
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(100, 100)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(1040, 100)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(100, 550)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(1040, 550)

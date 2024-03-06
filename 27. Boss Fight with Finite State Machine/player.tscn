@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bs0bl3xj51c7o"]
+
+[ext_resource type="Script" path="res://27. Boss Fight with Finite State Machine/player.gd" id="1_fm506"]
+[ext_resource type="PackedScene" uid="uid://bswskoqio4eyk" path="res://27. Boss Fight with Finite State Machine/bullet.tscn" id="2_65qk2"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_i4rv6"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7fov"]
+size = Vector2(40, 40)
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 0
+script = ExtResource("1_fm506")
+bullet_node = ExtResource("2_65qk2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 0, 1)
+texture = SubResource("PlaceholderTexture2D_i4rv6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d7fov")
