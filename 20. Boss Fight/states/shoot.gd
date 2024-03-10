@@ -1,4 +1,4 @@
-extends State
+extends State2
 class_name ShootState
 
 @export var bullet_node: PackedScene

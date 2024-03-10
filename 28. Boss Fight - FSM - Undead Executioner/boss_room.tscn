@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://8wmcrbnsr5if"]
+
+[ext_resource type="PackedScene" uid="uid://wxlopuh550gm" path="res://28. Boss Fight - FSM - Undead Executioner/skeleton_boss.tscn" id="1_h7phw"]
+[ext_resource type="PackedScene" uid="uid://cfc1n7uwoylb0" path="res://28. Boss Fight - FSM - Undead Executioner/player.tscn" id="2_crhmr"]
+
+[node name="BossRoom" type="Node2D"]
+
+[node name="SkeletonBoss" parent="." instance=ExtResource("1_h7phw")]
+position = Vector2(585, 163)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 203)
+zoom = Vector2(2, 2)
+
+[node name="Player" parent="." instance=ExtResource("2_crhmr")]
+position = Vector2(591, 335)

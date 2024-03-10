@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://ckd6rjq0hawi1"]
+
+[ext_resource type="Texture2D" uid="uid://df3rn5vcqd4h" path="res://29. Golem Boss - FSM/assets/weapon PNG/arm_projectile_glowing.png" id="1_5beq8"]
+[ext_resource type="Script" path="res://29. Golem Boss - FSM/arm_projectile.gd" id="1_bbh87"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emyir"]
+atlas = ExtResource("1_5beq8")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8si33"]
+atlas = ExtResource("1_5beq8")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brcge"]
+atlas = ExtResource("1_5beq8")
+region = Rect2(250, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwxqx"]
+atlas = ExtResource("1_5beq8")
+region = Rect2(50, 100, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8lot"]
+atlas = ExtResource("1_5beq8")
+region = Rect2(150, 100, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fssim"]
+atlas = ExtResource("1_5beq8")
+region = Rect2(250, 100, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_acw5o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emyir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8si33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brcge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwxqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8lot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fssim")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8m2lw"]
+radius = 5.0
+height = 34.0
+
+[node name="ArmProjectile" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_bbh87")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_acw5o")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8m2lw")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

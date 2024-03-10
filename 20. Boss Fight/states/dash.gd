@@ -1,4 +1,4 @@
-extends State
+extends State2
 class_name DashState
 @onready var timer: Timer = $Timer
 

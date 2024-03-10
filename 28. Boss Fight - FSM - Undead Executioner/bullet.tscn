@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dug7op1t7sh7e"]
+
+[ext_resource type="Script" path="res://28. Boss Fight - FSM - Undead Executioner/bullet.gd" id="1_wf03s"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_04xp7"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j23ne"]
+size = Vector2(30, 30)
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_wf03s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 0, 1)
+texture = SubResource("PlaceholderTexture2D_04xp7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j23ne")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c65xsku3dnci"]
+
+[ext_resource type="Script" path="res://29. Golem Boss - FSM/player.gd" id="1_mpywe"]
+[ext_resource type="PackedScene" uid="uid://bmlvxabbfb1e2" path="res://29. Golem Boss - FSM/bullet.tscn" id="2_ic3iv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xen4r"]
+size = Vector2(40, 40)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_75is4"]
+size = Vector2(40, 40)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_mpywe")
+bullet_node = ExtResource("2_ic3iv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xen4r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_75is4")
