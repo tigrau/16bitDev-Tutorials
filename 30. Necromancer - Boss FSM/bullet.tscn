@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d23dqe3t2cgdn"]
+
+[ext_resource type="Script" path="res://30. Necromancer - Boss FSM/bullet.gd" id="1_c58s7"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bxu42"]
+size = Vector2(20, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u1od"]
+
+[node name="bullet" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_c58s7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 0, 1)
+texture = SubResource("PlaceholderTexture2D_bxu42")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0u1od")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

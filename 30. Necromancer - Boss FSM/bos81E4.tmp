@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c08unlopow8vn"]
+
+[ext_resource type="PackedScene" uid="uid://bmhauqevplby6" path="res://30. Necromancer - Boss FSM/necromancer.tscn" id="1_h4fyj"]
+[ext_resource type="PackedScene" uid="uid://cbcop1hduh83r" path="res://30. Necromancer - Boss FSM/player.tscn" id="2_ebut5"]
+
+[node name="BossRoom" type="Node2D"]
+
+[node name="Necromancer" parent="." instance=ExtResource("1_h4fyj")]
+position = Vector2(550, 207)
+
+[node name="Player" parent="." instance=ExtResource("2_ebut5")]

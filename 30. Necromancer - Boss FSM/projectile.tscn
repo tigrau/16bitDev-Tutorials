@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://k0nnn06sqynp"]
+
+[ext_resource type="Script" path="res://30. Necromancer - Boss FSM/projectile.gd" id="1_fswip"]
+[ext_resource type="Texture2D" uid="uid://ctekx40e5r3km" path="res://30. Necromancer - Boss FSM/assets/Necromancer_creativekind-Sheet.png" id="2_du4e7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg7t"]
+
+[node name="Projectile" type="Area2D"]
+top_level = true
+script = ExtResource("1_fswip")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_du4e7")
+region_enabled = true
+region_rect = Rect2(1341.35, 460.131, 7.11108, 7.50616)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qlg7t")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
