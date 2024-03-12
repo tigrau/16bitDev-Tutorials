@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://1esexwl42lhk"]
+
+[ext_resource type="PackedScene" uid="uid://ci3o4rfvjhnye" path="res://31. Bullet Hell/boss.tscn" id="1_fyhy4"]
+[ext_resource type="PackedScene" uid="uid://mcdav1oritla" path="res://31. Bullet Hell/player.tscn" id="2_2fh4k"]
+
+[node name="BossToom" type="Node2D"]
+
+[node name="Boss" parent="." instance=ExtResource("1_fyhy4")]
+position = Vector2(531, 308)
+
+[node name="Player" parent="." instance=ExtResource("2_2fh4k")]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://mcdav1oritla"]
+
+[ext_resource type="Script" path="res://31. Bullet Hell/player.gd" id="1_gu2go"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nok62"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbxkq"]
+size = Vector2(30, 30)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_gu2go")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_nok62")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dbxkq")
+
+[node name="Debug" type="Label" parent="."]
+offset_left = -24.0
+offset_top = -39.0
+offset_right = 25.0
+offset_bottom = -16.0
+text = "debug"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(200, 0)
+offset_left = -56.0
+offset_top = -43.0
+offset_right = 144.0
+offset_bottom = -16.0
+scale = Vector2(0.556077, 0.298328)
+step = 1.0
+value = 100.0
