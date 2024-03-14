@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://36j67k3i1gnb"]
+
+[ext_resource type="Script" path="res://32. Item System & Inventroy/player.gd" id="1_lupgh"]
+[ext_resource type="PackedScene" uid="uid://jp6ep7kimigk" path="res://32. Item System & Inventroy/bullet.tscn" id="2_8mo7f"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pd8nt"]
+size = Vector2(20, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpym3"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_lupgh")
+bullet_node = ExtResource("2_8mo7f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_pd8nt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cpym3")
+
+[node name="Speed" type="Timer" parent="."]
+
+[connection signal="timeout" from="Speed" to="." method="_on_speed_timeout"]

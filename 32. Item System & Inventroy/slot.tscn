@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgw46cpe665u6"]
+
+[ext_resource type="Script" path="res://32. Item System & Inventroy/slot.gd" id="1_ew063"]
+[ext_resource type="Script" path="res://32. Item System & Inventroy/stats.gd" id="2_evdwa"]
+
+[node name="Slot" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ew063")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+expand_mode = 1
+script = ExtResource("2_evdwa")
+
+[node name="Debug" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 16
+text = "x"

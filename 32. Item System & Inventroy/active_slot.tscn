@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvlt5yg44ta0n"]
+
+[ext_resource type="PackedScene" uid="uid://bgw46cpe665u6" path="res://32. Item System & Inventroy/slot.tscn" id="1_14f3o"]
+[ext_resource type="Script" path="res://32. Item System & Inventroy/active_slot.gd" id="2_lvwqs"]
+
+[node name="ActiveSlot" instance=ExtResource("1_14f3o")]
+script = ExtResource("2_lvwqs")
