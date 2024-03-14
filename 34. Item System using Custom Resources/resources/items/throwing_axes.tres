@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item34" load_steps=3 format=3 uid="uid://csjscilo3i4uy"]
+
+[ext_resource type="Texture2D" uid="uid://fd6vjp4b5xwk" path="res://34. Item System using Custom Resources/assets/tile025.png" id="1_2704g"]
+[ext_resource type="Script" path="res://34. Item System using Custom Resources/resources/item.gd" id="2_muvds"]
+
+[resource]
+script = ExtResource("2_muvds")
+icon = ExtResource("1_2704g")
+name = "throwing_axes"
+type = "Weapon"
+rarity = "Rare"
+description = "Can Boomerang."

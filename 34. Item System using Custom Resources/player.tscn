@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://5j60kcpu7hr6"]
+
+[ext_resource type="Script" path="res://34. Item System using Custom Resources/player.gd" id="1_g3epo"]
+[ext_resource type="PackedScene" uid="uid://du7pd7dyhcplh" path="res://34. Item System using Custom Resources/slot.tscn" id="1_jn2ap"]
+[ext_resource type="Script" path="res://34. Item System using Custom Resources/action_bar.gd" id="2_icnjs"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_28ll3"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uiiv4"]
+size = Vector2(30, 30)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g3epo")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ActionBar" type="HBoxContainer" parent="UI"]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_icnjs")
+
+[node name="Slot" parent="UI/ActionBar" instance=ExtResource("1_jn2ap")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_28ll3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uiiv4")

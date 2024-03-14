@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 
 ItemData="*res://24. Inventory System/data.gd"
 Database="*res://32. Item System & Inventroy/autoload/database.gd"
+ItemDatabase34="*res://34. Item System using Custom Resources/item_database_34.tscn"
 
 [display]
 

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://du7pd7dyhcplh"]
+
+[ext_resource type="Script" path="res://34. Item System using Custom Resources/slot.gd" id="1_c720p"]
+
+[node name="Slot" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_c720p")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1

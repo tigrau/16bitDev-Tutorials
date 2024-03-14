@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkbrq8xsphe8n"]
+
+[ext_resource type="PackedScene" uid="uid://b0dgjdrpvop5m" path="res://34. Item System using Custom Resources/abstract_item.tscn" id="1_hn34c"]
+[ext_resource type="PackedScene" uid="uid://5j60kcpu7hr6" path="res://34. Item System using Custom Resources/player.tscn" id="2_p5gyj"]
+[ext_resource type="PackedScene" uid="uid://bbnjmaxq5n4qd" path="res://34. Item System using Custom Resources/throwing_axe.tscn" id="3_8lkxx"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="AbstractItem" parent="." instance=ExtResource("1_hn34c")]
+position = Vector2(670, 48)
+
+[node name="Player" parent="." instance=ExtResource("2_p5gyj")]
+
+[node name="ThrowingAxe" parent="." instance=ExtResource("3_8lkxx")]
+position = Vector2(393, 206)
