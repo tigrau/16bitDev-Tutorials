@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item35" load_steps=3 format=3 uid="uid://bhvqf7emnyh2t"]
+
+[ext_resource type="Texture2D" uid="uid://d1hc7etdis1bn" path="res://35. Hotbar with Castom resource/assets/tile024.png" id="1_cpvdi"]
+[ext_resource type="Script" path="res://35. Hotbar with Castom resource/resources/item.gd" id="2_rw2ay"]
+
+[resource]
+script = ExtResource("2_rw2ay")
+icon = ExtResource("1_cpvdi")
+name = "Scythe"
+type = "Weapon"
+desctiption = "Tool"

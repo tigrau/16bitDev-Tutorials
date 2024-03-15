@@ -1,0 +1,42 @@
+[gd_scene load_steps=11 format=3 uid="uid://nb6xi48p5uqu"]
+
+[ext_resource type="PackedScene" uid="uid://br6118nswbl0" path="res://35. Hotbar with Castom resource/player.tscn" id="1_e8oy7"]
+[ext_resource type="PackedScene" uid="uid://loaaixq2ljf" path="res://35. Hotbar with Castom resource/abstract_item.tscn" id="2_6hi71"]
+[ext_resource type="Resource" uid="uid://dkniy6g5paidj" path="res://35. Hotbar with Castom resource/resources/items/fork.tres" id="3_305fj"]
+[ext_resource type="Resource" uid="uid://jwhfqcoknchb" path="res://35. Hotbar with Castom resource/resources/skills/energy.tres" id="4_2wth8"]
+[ext_resource type="Resource" uid="uid://dpgokycn2ohu1" path="res://35. Hotbar with Castom resource/resources/items/mana_potion.tres" id="5_83iqo"]
+[ext_resource type="Resource" uid="uid://holam6ps2mqu" path="res://35. Hotbar with Castom resource/resources/skills/fire.tres" id="6_n5j4w"]
+[ext_resource type="Resource" uid="uid://bhvqf7emnyh2t" path="res://35. Hotbar with Castom resource/resources/items/scythe.tres" id="7_stbth"]
+[ext_resource type="Resource" uid="uid://bq71y2kujumur" path="res://35. Hotbar with Castom resource/resources/skills/ki.tres" id="8_efmhm"]
+[ext_resource type="Resource" uid="uid://ua7o0kdxos0i" path="res://35. Hotbar with Castom resource/resources/items/sword.tres" id="9_66tob"]
+[ext_resource type="Resource" uid="uid://dfa1a5dsgfn5i" path="res://35. Hotbar with Castom resource/resources/skills/mana.tres" id="10_ft6cv"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_e8oy7")]
+position = Vector2(253, 83)
+
+[node name="AbstractItem" parent="." instance=ExtResource("2_6hi71")]
+position = Vector2(119, 218)
+stats = ExtResource("3_305fj")
+skill = ExtResource("4_2wth8")
+
+[node name="AbstractItem2" parent="." instance=ExtResource("2_6hi71")]
+position = Vector2(225, 216)
+stats = ExtResource("5_83iqo")
+skill = ExtResource("6_n5j4w")
+
+[node name="AbstractItem3" parent="." instance=ExtResource("2_6hi71")]
+position = Vector2(299, 220)
+stats = ExtResource("7_stbth")
+skill = ExtResource("8_efmhm")
+
+[node name="AbstractItem4" parent="." instance=ExtResource("2_6hi71")]
+position = Vector2(381, 215)
+stats = ExtResource("9_66tob")
+skill = ExtResource("10_ft6cv")
+
+[node name="AbstractItem5" parent="." instance=ExtResource("2_6hi71")]
+position = Vector2(416, 164)
+stats = ExtResource("9_66tob")
+skill = ExtResource("10_ft6cv")

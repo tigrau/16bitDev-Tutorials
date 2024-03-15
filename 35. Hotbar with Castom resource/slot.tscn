@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c37qc1b06g2gq"]
+
+[ext_resource type="Script" path="res://35. Hotbar with Castom resource/drag_slot.gd" id="1_yqdvg"]
+
+[node name="Slot" type="Button"]
+custom_minimum_size = Vector2(50, 80)
+offset_right = 8.0
+offset_bottom = 8.0
+focus_mode = 1
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_yqdvg")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

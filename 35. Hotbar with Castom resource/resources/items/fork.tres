@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item35" load_steps=3 format=3 uid="uid://dkniy6g5paidj"]
+
+[ext_resource type="Texture2D" uid="uid://cioeu7a8dih5b" path="res://35. Hotbar with Castom resource/assets/tile021.png" id="1_8uah7"]
+[ext_resource type="Script" path="res://35. Hotbar with Castom resource/resources/item.gd" id="2_b70io"]
+
+[resource]
+script = ExtResource("2_b70io")
+icon = ExtResource("1_8uah7")
+name = "Fork"
+type = "Weapon"
+desctiption = "One hit 3 holes."

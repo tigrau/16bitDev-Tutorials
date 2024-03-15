@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Skill35" load_steps=2 format=3 uid="uid://bq71y2kujumur"]
+
+[ext_resource type="Script" path="res://35. Hotbar with Castom resource/resources/skill.gd" id="1_v60fo"]
+
+[resource]
+script = ExtResource("1_v60fo")
+name = "Ki"
+desctiption = ""
+mana = 50.0

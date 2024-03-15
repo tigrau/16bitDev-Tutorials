@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item35" load_steps=3 format=3 uid="uid://ua7o0kdxos0i"]
+
+[ext_resource type="Texture2D" uid="uid://hcqsosnwsenq" path="res://35. Hotbar with Castom resource/assets/tile006.png" id="1_irbgl"]
+[ext_resource type="Script" path="res://35. Hotbar with Castom resource/resources/item.gd" id="2_k73p0"]
+
+[resource]
+script = ExtResource("2_k73p0")
+icon = ExtResource("1_irbgl")
+name = "Fork"
+type = "Weapon"
+desctiption = "Does slash damage."

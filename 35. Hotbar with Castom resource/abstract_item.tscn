@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://loaaixq2ljf"]
+
+[ext_resource type="Script" path="res://35. Hotbar with Castom resource/abstract_item.gd" id="1_tw0us"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pcls"]
+
+[node name="AbstractItem" type="Sprite2D"]
+script = ExtResource("1_tw0us")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_4pcls")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_player_entered"]
