@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item36" load_steps=3 format=3 uid="uid://b60tm03gefwxf"]
+
+[ext_resource type="Texture2D" uid="uid://dhr3fw45d4lyw" path="res://36. Crafting System/assets/Silver Ingot.png" id="1_lnb1m"]
+[ext_resource type="Script" path="res://36. Crafting System/resources/item36.gd" id="2_8dlyu"]
+
+[resource]
+script = ExtResource("2_8dlyu")
+icon = ExtResource("1_lnb1m")
+name = "iron"
+recipe = Array[ExtResource("2_8dlyu")]([])
+type = "Material"
+description = "Material used for crafting."

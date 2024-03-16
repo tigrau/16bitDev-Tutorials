@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://olbqycb8e8b3"]
+
+[ext_resource type="PackedScene" uid="uid://brgdhy7b2exfc" path="res://36. Crafting System/scenes/slot/slot.tscn" id="1_4d7xs"]
+[ext_resource type="Script" path="res://36. Crafting System/scripts/inventory.gd" id="1_kxn1v"]
+[ext_resource type="Resource" uid="uid://bxjcyq64iidfy" path="res://36. Crafting System/resources/stick.tres" id="2_ubv0m"]
+[ext_resource type="Resource" uid="uid://b60tm03gefwxf" path="res://36. Crafting System/resources/iron.tres" id="3_45w1k"]
+[ext_resource type="PackedScene" uid="uid://iymnodgt3vtx" path="res://36. Crafting System/scenes/recipe.tscn" id="5_gtuwm"]
+[ext_resource type="Script" path="res://36. Crafting System/scripts/recipes.gd" id="5_te3nc"]
+[ext_resource type="Resource" uid="uid://cpnwk6nkrpet0" path="res://36. Crafting System/resources/sword.tres" id="6_vy5ia"]
+[ext_resource type="PackedScene" uid="uid://dq2f5wsysr122" path="res://36. Crafting System/scenes/abstract_item.tscn" id="8_rn64o"]
+[ext_resource type="PackedScene" uid="uid://b3r4rnmbt27ho" path="res://36. Crafting System/scenes/Player.tscn" id="9_q7slw"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Inventory" type="GridContainer" parent="UI"]
+offset_left = 746.0
+offset_top = 256.0
+offset_right = 918.0
+offset_bottom = 384.0
+columns = 4
+script = ExtResource("1_kxn1v")
+
+[node name="Slot" parent="UI/Inventory" instance=ExtResource("1_4d7xs")]
+layout_mode = 2
+
+[node name="Slot2" parent="UI/Inventory" instance=ExtResource("1_4d7xs")]
+layout_mode = 2
+
+[node name="Slot3" parent="UI/Inventory" instance=ExtResource("1_4d7xs")]
+layout_mode = 2
+
+[node name="Slot4" parent="UI/Inventory" instance=ExtResource("1_4d7xs")]
+layout_mode = 2
+
+[node name="Slot5" parent="UI/Inventory" instance=ExtResource("1_4d7xs")]
+layout_mode = 2
+
+[node name="Slot6" parent="UI/Inventory" instance=ExtResource("1_4d7xs")]
+layout_mode = 2
+
+[node name="Slot7" parent="UI/Inventory" instance=ExtResource("1_4d7xs")]
+layout_mode = 2
+
+[node name="Slot8" parent="UI/Inventory" instance=ExtResource("1_4d7xs")]
+layout_mode = 2
+
+[node name="Slot9" parent="UI/Inventory" instance=ExtResource("1_4d7xs")]
+layout_mode = 2
+
+[node name="Slot10" parent="UI/Inventory" instance=ExtResource("1_4d7xs")]
+layout_mode = 2
+
+[node name="Slot11" parent="UI/Inventory" instance=ExtResource("1_4d7xs")]
+layout_mode = 2
+
+[node name="Slot12" parent="UI/Inventory" instance=ExtResource("1_4d7xs")]
+layout_mode = 2
+
+[node name="Recipes" type="VBoxContainer" parent="UI"]
+offset_left = 614.0
+offset_top = 254.0
+offset_right = 722.0
+offset_bottom = 304.0
+script = ExtResource("5_te3nc")
+
+[node name="Recipe" parent="UI/Recipes" instance=ExtResource("5_gtuwm")]
+layout_mode = 2
+item = ExtResource("6_vy5ia")
+
+[node name="AbstractItem" parent="." instance=ExtResource("8_rn64o")]
+position = Vector2(270, 132)
+item = ExtResource("3_45w1k")
+
+[node name="AbstractItem2" parent="." instance=ExtResource("8_rn64o")]
+position = Vector2(384, 138)
+item = ExtResource("3_45w1k")
+
+[node name="AbstractItem3" parent="." instance=ExtResource("8_rn64o")]
+position = Vector2(494, 142)
+item = ExtResource("2_ubv0m")
+
+[node name="AbstractItem4" parent="." instance=ExtResource("8_rn64o")]
+position = Vector2(298, 220)
+item = ExtResource("2_ubv0m")
+
+[node name="Player" parent="." instance=ExtResource("9_q7slw")]
+
+[connection signal="item_changed" from="UI/Inventory" to="UI/Recipes" method="_on_inventory_item_changed"]

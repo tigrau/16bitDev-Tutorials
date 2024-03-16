@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item36" load_steps=5 format=3 uid="uid://cpnwk6nkrpet0"]
+
+[ext_resource type="Texture2D" uid="uid://c3covgsksp8l8" path="res://36. Crafting System/assets/sword.png" id="1_27r80"]
+[ext_resource type="Resource" uid="uid://bxjcyq64iidfy" path="res://36. Crafting System/resources/stick.tres" id="2_hvjas"]
+[ext_resource type="Resource" uid="uid://b60tm03gefwxf" path="res://36. Crafting System/resources/iron.tres" id="3_hyklw"]
+[ext_resource type="Script" path="res://36. Crafting System/resources/item36.gd" id="4_4bk5u"]
+
+[resource]
+script = ExtResource("4_4bk5u")
+icon = ExtResource("1_27r80")
+name = "sword"
+recipe = Array[ExtResource("4_4bk5u")]([ExtResource("2_hvjas"), ExtResource("3_hyklw")])
+type = "Weapon"
+description = "Weapon used in combat"

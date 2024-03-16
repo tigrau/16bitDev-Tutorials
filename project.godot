@@ -28,6 +28,15 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/AS2P/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://36. Crafting System/assets/": "red",
+"res://36. Crafting System/resources/": "orange",
+"res://36. Crafting System/scenes/": "yellow",
+"res://36. Crafting System/scripts/": "green"
+}
+
 [input]
 
 ui_left={

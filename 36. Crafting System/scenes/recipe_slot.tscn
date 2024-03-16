@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj6oge0pet6sx"]
+
+[ext_resource type="Script" path="res://36. Crafting System/scripts/recipe_slot.gd" id="1_55oqw"]
+
+[node name="RecipeSlot" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_55oqw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(25, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2

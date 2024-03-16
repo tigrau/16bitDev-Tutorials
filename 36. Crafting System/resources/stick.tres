@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item36" load_steps=3 format=3 uid="uid://bxjcyq64iidfy"]
+
+[ext_resource type="Texture2D" uid="uid://br4lwr6gayvle" path="res://36. Crafting System/assets/Stick.png" id="1_gcffo"]
+[ext_resource type="Script" path="res://36. Crafting System/resources/item36.gd" id="2_wii3d"]
+
+[resource]
+script = ExtResource("2_wii3d")
+icon = ExtResource("1_gcffo")
+name = "stick"
+recipe = Array[ExtResource("2_wii3d")]([])
+type = "Material"
+description = "Material used for crafting."
