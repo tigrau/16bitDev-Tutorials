@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://b87ujkwy5lmd2"]
+
+[ext_resource type="Script" path="res://39. Custom Data Layer 2d Hightmap/player.gd" id="1_1jihx"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p5on3"]
+size = Vector2(8, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rao6"]
+size = Vector2(8, 20)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_1jihx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_p5on3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7rao6")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Height" type="Label" parent="UI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="State" type="Label" parent="UI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "land"
+
+[node name="Floor" type="Label" parent="UI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="Zpos" type="Label" parent="UI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2

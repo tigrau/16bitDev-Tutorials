@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 ItemData="*res://24. Inventory System/data.gd"
 Database="*res://32. Item System & Inventroy/autoload/database.gd"
 ItemDatabase34="*res://34. Item System using Custom Resources/item_database_34.tscn"
+Persistence="*res://37. Main menu/persistence.gd"
 
 [display]
 
@@ -101,6 +102,11 @@ scroll_down={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":16,"position":Vector2(305, 12),"global_position":Vector2(309, 53),"factor":1.0,"button_index":5,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+jump={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"echo":false,"script":null)
+]
+}
 
 [layer_names]
 
@@ -110,3 +116,4 @@ scroll_down={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.196078, 0.196078, 0.196078, 1)
