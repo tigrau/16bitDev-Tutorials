@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ftvqjrx58w00"]
+
+[ext_resource type="Script" path="res://40. RichTextLabel & BBCode/abstract_item.gd" id="1_a1ixr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lewlx"]
+
+[node name="AbstractItem" type="Sprite2D"]
+script = ExtResource("1_a1ixr")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_lewlx")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_player_entered"]

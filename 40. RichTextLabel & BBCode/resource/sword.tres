@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item40" load_steps=3 format=3 uid="uid://30cp8v5gcidb"]
+
+[ext_resource type="Texture2D" uid="uid://hcqsosnwsenq" path="res://35. Hotbar with Castom resource/assets/tile006.png" id="1_jghke"]
+[ext_resource type="Script" path="res://40. RichTextLabel & BBCode/item40.gd" id="2_686fr"]
+
+[resource]
+script = ExtResource("2_686fr")
+icon = ExtResource("1_jghke")
+name = "Sword"
+path = "res://35. Hotbar with Castom resource/assets/tile006.png"
+type = "Weapon"
+rarity = "Epic"
+description = "Does Slash Damage."

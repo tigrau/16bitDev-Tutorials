@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://cb12k4b8a8c62"]
+
+[ext_resource type="PackedScene" uid="uid://cdei5h2tpjsr7" path="res://40. RichTextLabel & BBCode/item_message.tscn" id="1_njgok"]
+[ext_resource type="PackedScene" uid="uid://di0xypff2cbfn" path="res://40. RichTextLabel & BBCode/player.tscn" id="2_sfpqx"]
+[ext_resource type="PackedScene" uid="uid://ftvqjrx58w00" path="res://40. RichTextLabel & BBCode/abstract_item.tscn" id="3_lna4p"]
+[ext_resource type="Resource" uid="uid://drnegh2se3hp5" path="res://40. RichTextLabel & BBCode/resource/axe.tres" id="4_7bvam"]
+[ext_resource type="Resource" uid="uid://30cp8v5gcidb" path="res://40. RichTextLabel & BBCode/resource/sword.tres" id="5_xsm4y"]
+[ext_resource type="Resource" uid="uid://pi46udxtjh5t" path="res://40. RichTextLabel & BBCode/resource/trident.tres" id="6_6l03i"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="ItemMessage" parent="." instance=ExtResource("1_njgok")]
+
+[node name="Player" parent="." instance=ExtResource("2_sfpqx")]
+position = Vector2(410, 215)
+
+[node name="AbstractItem" parent="." instance=ExtResource("3_lna4p")]
+position = Vector2(125, 45)
+item = ExtResource("4_7bvam")
+
+[node name="AbstractItem2" parent="." instance=ExtResource("3_lna4p")]
+position = Vector2(317, 50)
+item = ExtResource("5_xsm4y")
+
+[node name="AbstractItem3" parent="." instance=ExtResource("3_lna4p")]
+position = Vector2(530, 55)
+item = ExtResource("6_6l03i")

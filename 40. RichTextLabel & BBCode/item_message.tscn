@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdei5h2tpjsr7"]
+
+[ext_resource type="Script" path="res://40. RichTextLabel & BBCode/item_message.gd" id="1_x42lm"]
+
+[node name="ItemMessage" type="CanvasLayer"]
+script = ExtResource("1_x42lm")
+
+[node name="Messages" type="RichTextLabel" parent="."]
+offset_left = 938.0
+offset_top = 105.0
+offset_right = 1131.0
+offset_bottom = 499.0
+bbcode_enabled = true
+text = "[b]Bold[/b]
+[i]Italic[/i]
+[color=teal]Teal[/color]
+[color=yellow]Yellow[/color]
+[color=silver]Silver[/color]
+[pulse] Pulse Pulse [/pulse]
+[wave amp = 1000 freq = 1] Wave Wave Wave[/wave]
+[hint=\"This is an axe\".] Axe [/hint]
+[img=16x16]res://icon.svg[/img][img=16x16]res://icon.svg[/img][img=16x16]res://icon.svg[/img]"
+
+[node name="Message" type="RichTextLabel" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -197.0
+offset_right = 334.0
+offset_bottom = 197.0
+grow_vertical = 2
+bbcode_enabled = true
