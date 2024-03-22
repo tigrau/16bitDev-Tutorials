@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuubs5q0uktos"]
+
+[ext_resource type="PackedScene" uid="uid://brbno5amj5acu" path="res://43.  Status Effect - RPG System Design/enemey.tscn" id="1_lvif2"]
+
+[node name="TestScena" type="Node2D"]
+
+[node name="Enemey" parent="." instance=ExtResource("1_lvif2")]
+position = Vector2(586, 317)
