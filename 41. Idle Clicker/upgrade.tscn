@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bva1eg785oj1a"]
+
+[ext_resource type="Script" path="res://41. Idle Clicker/upgrade.gd" id="1_bmx2x"]
+
+[node name="Upgrade" type="Button"]
+text = "Upgrade 1"
+script = ExtResource("1_bmx2x")
+lvl = "16"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://g4h14np2w7d8"]
+
+[ext_resource type="PackedScene" uid="uid://rykkxn6ns8d6" path="res://42. Damage Formula/enemy.tscn" id="1_e8br0"]
+[ext_resource type="PackedScene" uid="uid://bfa4kvrl6ti4v" path="res://42. Damage Formula/player.tscn" id="2_47j7q"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_e8br0")]
+position = Vector2(608, 308)
+
+[node name="Player" parent="." instance=ExtResource("2_47j7q")]
+position = Vector2(432, 300)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(524, 280)
+zoom = Vector2(2, 2)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfa4kvrl6ti4v"]
+
+[ext_resource type="Script" path="res://42. Damage Formula/player.gd" id="1_tgktr"]
+[ext_resource type="PackedScene" uid="uid://ctvitw1c0sev7" path="res://42. Damage Formula/bullet.tscn" id="2_5ccr0"]
+[ext_resource type="Texture2D" uid="uid://lyy6rtgmxmom" path="res://42. Damage Formula/assets/Halberdier.png" id="2_p67n0"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_tgktr")
+bullet_node = ExtResource("2_5ccr0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_p67n0")
+flip_h = true
+
+[node name="DamageType" type="Label" parent="."]
+offset_left = -26.0
+offset_top = 42.0
+offset_right = 37.0
+offset_bottom = 65.0
+text = "Physical"

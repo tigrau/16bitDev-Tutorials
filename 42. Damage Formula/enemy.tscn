@@ -1,0 +1,150 @@
+[gd_scene load_steps=9 format=3 uid="uid://rykkxn6ns8d6"]
+
+[ext_resource type="Script" path="res://42. Damage Formula/enemy.gd" id="1_gdw62"]
+[ext_resource type="PackedScene" uid="uid://d30t4hq81udx1" path="res://42. Damage Formula/floating_number.tscn" id="2_srsdt"]
+[ext_resource type="Texture2D" uid="uid://gu27r1up51mp" path="res://42. Damage Formula/assets/Valkyrie.png" id="2_usomx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qmctd"]
+radius = 21.0
+height = 54.0
+
+[sub_resource type="Animation" id="Animation_5h1gb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.5, 1.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y8xsh"]
+resource_name = "resistant"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Resistant"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(1.5, 1.5), Vector2(0.75, 0.75)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 0, 1), Color(1, 1, 0, 1), Color(1, 1, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qkcru"]
+resource_name = "effective"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Effective"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(1.5, 1.5), Vector2(0.75, 0.75)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 1, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8o512"]
+_data = {
+"RESET": SubResource("Animation_5h1gb"),
+"effective": SubResource("Animation_qkcru"),
+"resistant": SubResource("Animation_y8xsh")
+}
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_gdw62")
+crit_chance = 0.15
+type_resistance = 2
+type_effective = 3
+floating_number = ExtResource("2_srsdt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_usomx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_qmctd")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 0, 0)
+offset_left = -32.0
+offset_top = 26.0
+offset_right = 40.0
+offset_bottom = 49.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(32, 11.5)
+text = "Effective"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8o512")
+}

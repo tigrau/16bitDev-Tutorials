@@ -14,6 +14,6 @@ func _ready() -> void:
 		cache[file_name] = load(item_folder + "/" + file_name)
 		
 		file_name = folder.get_next()
-	print(cache)
+	#print(cache)
 func get_item(ID):
 	return cache[ID + ".tres"]
