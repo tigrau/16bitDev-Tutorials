@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6yuic0ngm1ch"]
+
+[ext_resource type="PackedScene" uid="uid://c1srcd45qnudm" path="res://45. Skill & Action Bar/player.tscn" id="1_keqfv"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_keqfv")]
+position = Vector2(599, 309)
