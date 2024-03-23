@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dk1fe880am7oi"
+path="res://.godot/imported/piglin.mp3-8a504ce2d66a6fb24cb742ccf2eaffbf.mp3str"
+
+[deps]
+
+source_file="res://44. Stat Growth/piglin.mp3"
+dest_files=["res://.godot/imported/piglin.mp3-8a504ce2d66a6fb24cb742ccf2eaffbf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

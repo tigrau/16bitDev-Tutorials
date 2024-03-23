@@ -6,3 +6,7 @@
 
 [node name="Enemey" parent="." instance=ExtResource("1_lvif2")]
 position = Vector2(586, 317)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(570, 192)
+zoom = Vector2(2, 2)

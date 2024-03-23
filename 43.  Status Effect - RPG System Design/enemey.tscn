@@ -304,6 +304,7 @@ offset_left = 4.0
 offset_top = 464.0
 offset_right = 154.0
 offset_bottom = 504.0
+scale = Vector2(2, 2)
 
 [node name="Stun" type="TextureRect" parent="UI/StatusEffects"]
 visible = false

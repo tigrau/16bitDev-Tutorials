@@ -1,0 +1,227 @@
+[gd_scene load_steps=19 format=3 uid="uid://dr3knbbox7lsw"]
+
+[ext_resource type="Script" path="res://44. Stat Growth/player.gd" id="1_gtt13"]
+[ext_resource type="Texture2D" uid="uid://lyy6rtgmxmom" path="res://42. Damage Formula/assets/Halberdier.png" id="2_4etam"]
+[ext_resource type="Texture2D" uid="uid://b43f6jkpjcam5" path="res://44. Stat Growth/Level Up Effect Spritesheet.png" id="3_ewuqi"]
+[ext_resource type="AudioStream" uid="uid://dk1fe880am7oi" path="res://44. Stat Growth/piglin.mp3" id="4_c0cpb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh1xg"]
+atlas = ExtResource("3_ewuqi")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5pkl"]
+atlas = ExtResource("3_ewuqi")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wc3lb"]
+atlas = ExtResource("3_ewuqi")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0jm1"]
+atlas = ExtResource("3_ewuqi")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_om3g4"]
+atlas = ExtResource("3_ewuqi")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqol5"]
+atlas = ExtResource("3_ewuqi")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmpgx"]
+atlas = ExtResource("3_ewuqi")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvuaw"]
+atlas = ExtResource("3_ewuqi")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x4bx"]
+atlas = ExtResource("3_ewuqi")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3no8"]
+atlas = ExtResource("3_ewuqi")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d32ev"]
+atlas = ExtResource("3_ewuqi")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcwk8"]
+atlas = ExtResource("3_ewuqi")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxpjm"]
+atlas = ExtResource("3_ewuqi")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qrdb8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh1xg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5pkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wc3lb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0jm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_om3g4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqol5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmpgx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvuaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7x4bx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3no8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d32ev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcwk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxpjm")
+}],
+"loop": false,
+"name": &"level_up",
+"speed": 12.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_gtt13")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Level" type="HBoxContainer" parent="UI"]
+offset_left = 9.0
+offset_top = 592.0
+offset_right = 236.0
+offset_bottom = 647.0
+
+[node name="Label" type="Label" parent="UI/Level"]
+unique_name_in_owner = true
+modulate = Color(1, 0, 0.133333, 1)
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "1"
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/Level"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 240.0
+step = 1.0
+
+[node name="GainXP" type="Button" parent="UI"]
+offset_left = 258.0
+offset_top = 602.0
+offset_right = 322.0
+offset_bottom = 633.0
+text = "GainXP"
+
+[node name="Stats" type="HBoxContainer" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Attribute" type="VBoxContainer" parent="UI/Stats"]
+layout_mode = 2
+
+[node name="TotalXP" type="Label" parent="UI/Stats/Attribute"]
+layout_mode = 2
+text = "TotalXP"
+
+[node name="HP" type="Label" parent="UI/Stats/Attribute"]
+layout_mode = 2
+text = "HP"
+
+[node name="Strength" type="Label" parent="UI/Stats/Attribute"]
+layout_mode = 2
+text = "Strength"
+
+[node name="Vitality" type="Label" parent="UI/Stats/Attribute"]
+layout_mode = 2
+text = "Vitality"
+
+[node name="Agility" type="Label" parent="UI/Stats/Attribute"]
+layout_mode = 2
+text = "Agility"
+
+[node name="Defense" type="Label" parent="UI/Stats/Attribute"]
+layout_mode = 2
+text = "Defense"
+
+[node name="Value" type="VBoxContainer" parent="UI/Stats"]
+layout_mode = 2
+
+[node name="TotalXP" type="Label" parent="UI/Stats/Value"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="HP" type="Label" parent="UI/Stats/Value"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="Strength" type="Label" parent="UI/Stats/Value"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="Vitality" type="Label" parent="UI/Stats/Value"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="Agility" type="Label" parent="UI/Stats/Value"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="Defense" type="Label" parent="UI/Stats/Value"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(619, 203)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_qrdb8")
+animation = &"level_up"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(604, 318)
+scale = Vector2(3, 3)
+texture = ExtResource("2_4etam")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_c0cpb")
+volume_db = -20.0
+
+[connection signal="pressed" from="UI/GainXP" to="." method="_on_gain_xp_pressed"]
