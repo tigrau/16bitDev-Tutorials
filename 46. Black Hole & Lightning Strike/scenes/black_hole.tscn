@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://yb1yjulxahem"]
+
+[ext_resource type="PackedScene" uid="uid://cttwjmmovhyl4" path="res://46. Black Hole & Lightning Strike/scenes/placeable.tscn" id="1_js3u4"]
+[ext_resource type="Script" path="res://46. Black Hole & Lightning Strike/scenes/black_hole.gd" id="2_dgxi5"]
+[ext_resource type="Texture2D" uid="uid://c7avnls0uquri" path="res://46. Black Hole & Lightning Strike/assets/cosmos.png" id="2_nekm3"]
+
+[node name="BlackHole" instance=ExtResource("1_js3u4")]
+script = ExtResource("2_dgxi5")
+
+[node name="Preview" parent="." index="1"]
+visible = false
+
+[node name="Sprite2D" parent="." index="2"]
+modulate = Color(1, 1, 1, 0.333333)
+z_index = -1
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_nekm3")
+
+[node name="Timer" parent="." index="3"]
+wait_time = 3.0

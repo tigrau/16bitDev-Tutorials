@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://tx1n1q0ua42n"]
+
+[ext_resource type="PackedScene" uid="uid://cttwjmmovhyl4" path="res://46. Black Hole & Lightning Strike/scenes/placeable.tscn" id="1_uvuho"]
+[ext_resource type="Script" path="res://46. Black Hole & Lightning Strike/scenes/lightning_strike.gd" id="2_d1h64"]
+
+[node name="LightningStrike" instance=ExtResource("1_uvuho")]
+script = ExtResource("2_d1h64")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cttwjmmovhyl4"]
+
+[ext_resource type="Script" path="res://46. Black Hole & Lightning Strike/scenes/placeable.gd" id="1_8m6bp"]
+[ext_resource type="Texture2D" uid="uid://b4aa55010cjsi" path="res://46. Black Hole & Lightning Strike/assets/Ellipse 1.png" id="2_7ha03"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hosui"]
+radius = 80.0
+
+[node name="Placeable" type="Area2D"]
+script = ExtResource("1_8m6bp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hosui")
+disabled = true
+
+[node name="Preview" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.254902)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_7ha03")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

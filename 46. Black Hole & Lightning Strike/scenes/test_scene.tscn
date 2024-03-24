@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds55x4ywqltxw"]
+
+[ext_resource type="PackedScene" uid="uid://cvcfhtis22dch" path="res://46. Black Hole & Lightning Strike/scenes/enemy.tscn" id="1_weevn"]
+[ext_resource type="Script" path="res://46. Black Hole & Lightning Strike/scenes/Skill.gd" id="2_tdx4x"]
+[ext_resource type="PackedScene" uid="uid://yb1yjulxahem" path="res://46. Black Hole & Lightning Strike/scenes/black_hole.tscn" id="3_g403i"]
+[ext_resource type="PackedScene" uid="uid://tx1n1q0ua42n" path="res://46. Black Hole & Lightning Strike/scenes/lightning_strike.tscn" id="4_jroec"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_weevn")]
+position = Vector2(235, 196)
+
+[node name="Enemy2" parent="." instance=ExtResource("1_weevn")]
+position = Vector2(287, 174)
+
+[node name="Enemy3" parent="." instance=ExtResource("1_weevn")]
+position = Vector2(298, 239)
+
+[node name="Enemy4" parent="." instance=ExtResource("1_weevn")]
+position = Vector2(333, 209)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Skill" type="Button" parent="UI"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "BlackHole	"
+script = ExtResource("2_tdx4x")
+skill_node = ExtResource("3_g403i")
+
+[node name="Skill2" type="Button" parent="UI"]
+offset_top = 34.0
+offset_right = 130.0
+offset_bottom = 65.0
+text = "Lightning Strike"
+script = ExtResource("2_tdx4x")
+skill_node = ExtResource("4_jroec")
+
+[connection signal="pressed" from="UI/Skill" to="UI/Skill" method="_on_pressed"]
+[connection signal="pressed" from="UI/Skill2" to="UI/Skill2" method="_on_pressed"]

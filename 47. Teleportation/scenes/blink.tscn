@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdhem8psn7s88"]
+
+[ext_resource type="Texture2D" uid="uid://dndmlvnv0p7oe" path="res://46. Black Hole & Lightning Strike/assets/skeleton-idle.png" id="1_mrlsa"]
+[ext_resource type="Script" path="res://47. Teleportation/scenes/blink.gd" id="2_2dbb7"]
+
+[node name="Blink" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.7)
+texture = ExtResource("1_mrlsa")
+offset = Vector2(0, -24)
+hframes = 6
+script = ExtResource("2_2dbb7")
