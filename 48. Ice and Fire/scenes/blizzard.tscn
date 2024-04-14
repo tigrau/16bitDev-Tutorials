@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7nljsny3c63k"]
+
+[ext_resource type="Script" path="res://48. Ice and Fire/scenes/blizzard.gd" id="1_dj8f0"]
+[ext_resource type="Texture2D" uid="uid://bjudkbt63rvy2" path="res://48. Ice and Fire/assets/Ice Effect 01/Ice VFX 1/IceVFX 1 Repeatable.png" id="2_hx3hg"]
+[ext_resource type="AudioStream" uid="uid://2fcn45s61q48" path="res://48. Ice and Fire/assets/dry-fart.mp3" id="3_8qi7y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_waswo"]
+radius = 150.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rdof2"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(75, 1, 1)
+direction = Vector3(1, 1, 0)
+spread = 23.0
+initial_velocity_min = 25.0
+initial_velocity_max = 125.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_730p5"]
+particles_animation = true
+particles_anim_h_frames = 10
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5ehom"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(50, 1, 1)
+angle_min = -90.0
+angle_max = -90.0
+gravity = Vector3(0, 98, 0)
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[node name="Blizzard" type="Area2D"]
+script = ExtResource("1_dj8f0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_waswo")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.5
+one_shot = true
+
+[node name="Indicator" type="Polygon2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.439216)
+scale = Vector2(0.5, 0.5)
+color = Color(0, 1, 1, 1)
+polygon = PackedVector2Array(0, -150, 39, -145, 75, -130, 107, -105, 130, -75, 145, -39, 150, 0, 145, 40, 130, 75, 106, 106, 75, 130, 39, 145, 0, 150, -39, 145, -75, 130, -106, 106, -129, 76, -145, 39, -150, 0, -145, -39, -130, -75, -106, -106, -75, -130, -39, -145)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-24, -76)
+emitting = false
+amount = 25
+process_material = SubResource("ParticleProcessMaterial_rdof2")
+lifetime = 2.0
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_730p5")
+position = Vector2(0, -98)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_5ehom")
+texture = ExtResource("2_hx3hg")
+lifetime = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8qi7y")
+volume_db = -25.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

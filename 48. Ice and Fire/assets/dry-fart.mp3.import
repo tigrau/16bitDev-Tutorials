@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2fcn45s61q48"
+path="res://.godot/imported/dry-fart.mp3-b4be53c7e527a0f2ba2c90878d8bc67b.mp3str"
+
+[deps]
+
+source_file="res://48. Ice and Fire/assets/dry-fart.mp3"
+dest_files=["res://.godot/imported/dry-fart.mp3-b4be53c7e527a0f2ba2c90878d8bc67b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

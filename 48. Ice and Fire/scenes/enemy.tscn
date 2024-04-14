@@ -1,0 +1,101 @@
+[gd_scene load_steps=14 format=3 uid="uid://b2su5sm2pffv8"]
+
+[ext_resource type="Script" path="res://48. Ice and Fire/scenes/enemy.gd" id="1_5clh8"]
+[ext_resource type="Texture2D" uid="uid://bsdb7dj11tt7c" path="res://48. Ice and Fire/assets/IMG_0081.png" id="1_o7ul2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txmo2"]
+atlas = ExtResource("1_o7ul2")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbo61"]
+atlas = ExtResource("1_o7ul2")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttjur"]
+atlas = ExtResource("1_o7ul2")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj6ow"]
+atlas = ExtResource("1_o7ul2")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsn30"]
+atlas = ExtResource("1_o7ul2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu1d2"]
+atlas = ExtResource("1_o7ul2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exwdn"]
+atlas = ExtResource("1_o7ul2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhyi1"]
+atlas = ExtResource("1_o7ul2")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us324"]
+atlas = ExtResource("1_o7ul2")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjbp8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txmo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbo61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttjur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj6ow")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsn30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu1d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exwdn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhyi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_us324")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mxtoa"]
+radius = 6.08276
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_5clh8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_xjbp8")
+animation = &"hit"
+autoplay = "idle"
+frame = 3
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mxtoa")
+
+[node name="Reset" type="Timer" parent="."]
+
+[connection signal="timeout" from="Reset" to="." method="_on_reset_timeout"]
