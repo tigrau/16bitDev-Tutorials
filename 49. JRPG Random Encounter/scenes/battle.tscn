@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://e75wlmywh62c"]
+
+[ext_resource type="Script" path="res://49. JRPG Random Encounter/scenes/battle.gd" id="1_hmi1m"]
+[ext_resource type="Script" path="res://49. JRPG Random Encounter/scenes/run.gd" id="2_rb1qj"]
+[ext_resource type="PackedScene" uid="uid://ccnqf6mf0ncnn" path="res://49. JRPG Random Encounter/scenes/test_scene.tscn" id="3_wbha1"]
+
+[sub_resource type="Animation" id="Animation_6oroh"]
+resource_name = "arrive"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Marker2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-102, 330), Vector2(252, 330)]
+}
+
+[sub_resource type="Animation" id="Animation_xmg6x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Marker2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(252, 330)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_abk6b"]
+_data = {
+"RESET": SubResource("Animation_xmg6x"),
+"arrive": SubResource("Animation_6oroh")
+}
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_hmi1m")
+BG_FOLDER = "res://49. JRPG Random Encounter/assets/BG"
+
+[node name="BG" type="Sprite2D" parent="."]
+scale = Vector2(1.83125, 1.52927)
+centered = false
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+offset_left = 14.0
+offset_top = 498.0
+offset_right = 79.0
+offset_bottom = 599.0
+
+[node name="Button" type="Button" parent="UI/VBoxContainer"]
+layout_mode = 2
+text = "Attack"
+
+[node name="Button2" type="Button" parent="UI/VBoxContainer"]
+layout_mode = 2
+text = "Defend"
+
+[node name="Run" type="Button" parent="UI/VBoxContainer"]
+layout_mode = 2
+text = "Run"
+script = ExtResource("2_rb1qj")
+world = ExtResource("3_wbha1")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(252, 330)
+
+[node name="Enemy" type="Sprite2D" parent="Marker2D"]
+unique_name_in_owner = true
+scale = Vector2(3, 3)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_abk6b")
+}
+autoplay = "arrive"
+
+[connection signal="pressed" from="UI/VBoxContainer/Run" to="UI/VBoxContainer/Run" method="_on_pressed"]

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Enemy49" load_steps=3 format=3 uid="uid://s16kafjyekke"]
+
+[ext_resource type="Script" path="res://49. JRPG Random Encounter/scenes/EnemyClass.gd" id="1_7gkr8"]
+[ext_resource type="Texture2D" uid="uid://c8sovroasavry" path="res://49. JRPG Random Encounter/assets/Original Size 1х/Pallete 1/Cursed armor.png" id="2_q45ry"]
+
+[resource]
+script = ExtResource("1_7gkr8")
+name = "Curesed Armor"
+texture = ExtResource("2_q45ry")
+HP = 17
+XP = 20
+gold = 5
+ATK = 4
+DEF = 8

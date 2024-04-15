@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Enemy49" load_steps=3 format=3 uid="uid://ceg3rjmuxum1q"]
+
+[ext_resource type="Script" path="res://49. JRPG Random Encounter/scenes/EnemyClass.gd" id="1_3unss"]
+[ext_resource type="Texture2D" uid="uid://djqd2mpbuuvcv" path="res://49. JRPG Random Encounter/assets/Original Size 1х/Pallete 1/Lich.png" id="2_00myg"]
+
+[resource]
+script = ExtResource("1_3unss")
+name = "Lich"
+texture = ExtResource("2_00myg")
+HP = 1
+XP = 1
+gold = 1
+ATK = 1
+DEF = 1

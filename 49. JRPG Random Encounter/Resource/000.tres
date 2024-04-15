@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Enemy49" load_steps=3 format=3 uid="uid://dadho8l440duc"]
+
+[ext_resource type="Script" path="res://49. JRPG Random Encounter/scenes/EnemyClass.gd" id="1_e21ss"]
+[ext_resource type="Texture2D" uid="uid://crdgl5l81tiue" path="res://49. JRPG Random Encounter/assets/Original Size 1х/Pallete 1/Banshee.png" id="2_ip8il"]
+
+[resource]
+script = ExtResource("1_e21ss")
+name = "Banshee"
+texture = ExtResource("2_ip8il")
+HP = 12
+XP = 10
+gold = 8
+ATK = 9
+DEF = 14

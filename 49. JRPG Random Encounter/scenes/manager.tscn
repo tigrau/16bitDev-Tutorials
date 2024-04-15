@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://s7fpd3wyuogv"]
+
+[ext_resource type="Script" path="res://49. JRPG Random Encounter/scenes/manager.gd" id="1_skupl"]
+[ext_resource type="PackedScene" uid="uid://e75wlmywh62c" path="res://49. JRPG Random Encounter/scenes/battle.tscn" id="2_666xa"]
+
+[node name="Manager" type="Node2D"]
+script = ExtResource("1_skupl")
+battle_scene = ExtResource("2_666xa")
+enemy_folder = "res://49. JRPG Random Encounter/Resource"
+
+[node name="Debug" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Debug"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Debug/HBoxContainer"]
+layout_mode = 2
+
+[node name="Encounter" type="Label" parent="Debug/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Enconter at"

@@ -20,6 +20,7 @@ ItemData="*res://24. Inventory System/data.gd"
 Database="*res://32. Item System & Inventroy/autoload/database.gd"
 ItemDatabase34="*res://34. Item System using Custom Resources/item_database_34.tscn"
 Persistence="*res://37. Main menu/persistence.gd"
+Manager="*res://49. JRPG Random Encounter/scenes/manager.tscn"
 
 [display]
 
