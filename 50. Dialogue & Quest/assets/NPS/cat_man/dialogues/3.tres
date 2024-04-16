@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=5 format=3 uid="uid://c3tmt4a35v77i"]
+
+[ext_resource type="Resource" uid="uid://n310obtjig85" path="res://50. Dialogue & Quest/assets/NPS/cat_man/dialogues/yes.tres" id="1_hbw3p"]
+[ext_resource type="Script" path="res://50. Dialogue & Quest/custom_resources/dialogue.gd" id="1_pylqk"]
+[ext_resource type="Texture2D" uid="uid://cknndcu4h1hj2" path="res://50. Dialogue & Quest/assets/cat_man_smile.png" id="2_74a1k"]
+[ext_resource type="Resource" uid="uid://jqx54nc1f8bu" path="res://50. Dialogue & Quest/assets/NPS/cat_man/dialogues/no.tres" id="2_b6ai2"]
+
+[resource]
+script = ExtResource("1_pylqk")
+texture = ExtResource("2_74a1k")
+name = "Cat Man"
+dialogue = "Have you found any rocks yet?"
+path_option = ""
+options = Array[ExtResource("1_pylqk")]([ExtResource("1_hbw3p"), ExtResource("2_b6ai2")])

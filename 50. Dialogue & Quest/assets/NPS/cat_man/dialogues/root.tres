@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://b4v5b6upckt71"]
+
+[ext_resource type="Script" path="res://50. Dialogue & Quest/custom_resources/dialogue.gd" id="1_6m10u"]
+[ext_resource type="Texture2D" uid="uid://c6udtb4yde6kc" path="res://50. Dialogue & Quest/assets/cat_man.png" id="2_oi07q"]
+
+[resource]
+script = ExtResource("1_6m10u")
+texture = ExtResource("2_oi07q")
+name = "Cat Man"
+dialogue = "Wahhhhh!"
+path_option = ""
+options = Array[ExtResource("1_6m10u")]([null])

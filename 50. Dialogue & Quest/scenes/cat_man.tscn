@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu7hh48oc76ck"]
+
+[ext_resource type="Script" path="res://50. Dialogue & Quest/scenes/cat_man.gd" id="1_454og"]
+[ext_resource type="Texture2D" uid="uid://c6udtb4yde6kc" path="res://50. Dialogue & Quest/assets/cat_man.png" id="1_o3i52"]
+[ext_resource type="PackedScene" uid="uid://dyx068shvhnes" path="res://50. Dialogue & Quest/scenes/interaction.tscn" id="2_i3heu"]
+[ext_resource type="Resource" uid="uid://o0jppok1fxpg" path="res://50. Dialogue & Quest/assets/NPS/cat_man/dialogues/0.tres" id="2_iksl5"]
+
+[node name="CatMan" type="CharacterBody2D"]
+script = ExtResource("1_454og")
+dialogue = ExtResource("2_iksl5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_o3i52")
+
+[node name="Interaction" parent="." instance=ExtResource("2_i3heu")]

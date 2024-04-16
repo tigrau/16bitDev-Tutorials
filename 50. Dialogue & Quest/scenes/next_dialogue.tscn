@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2400gjkwew3p"]
+
+[ext_resource type="Script" path="res://50. Dialogue & Quest/scenes/next_dialogue.gd" id="1_73jhy"]
+
+[node name="NextDialogue" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_73jhy")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

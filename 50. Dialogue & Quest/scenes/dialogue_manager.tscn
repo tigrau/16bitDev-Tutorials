@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://bldkh7jqyw3pd"]
+
+[ext_resource type="Theme" uid="uid://bnhafc3h7xv8x" path="res://50. Dialogue & Quest/custom_resources/theme_to_change_font.tres" id="1_00xw7"]
+[ext_resource type="Script" path="res://50. Dialogue & Quest/scenes/dialogue_manager.gd" id="1_7thuq"]
+[ext_resource type="PackedScene" uid="uid://c2400gjkwew3p" path="res://50. Dialogue & Quest/scenes/next_dialogue.tscn" id="2_7tu8r"]
+[ext_resource type="PackedScene" uid="uid://cyb3us2by8d8c" path="res://50. Dialogue & Quest/scenes/quest_button.tscn" id="3_6m06m"]
+
+[node name="DialogueManager" type="Node2D"]
+script = ExtResource("1_7thuq")
+next_button = ExtResource("2_7tu8r")
+quest_button = ExtResource("3_6m06m")
+
+[node name="UI" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="UI"]
+custom_minimum_size = Vector2(600, 300)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+theme = ExtResource("1_00xw7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="UI/PanelContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="UI/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Dialogue" type="Label" parent="UI/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="Options" type="VBoxContainer" parent="UI/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2

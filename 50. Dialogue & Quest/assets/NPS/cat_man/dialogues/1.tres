@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=4 format=3 uid="uid://jhowgl3a3x8v"]
+
+[ext_resource type="Resource" uid="uid://dbf078f5sixjv" path="res://50. Dialogue & Quest/assets/NPS/cat_man/dialogues/2.tres" id="1_2448c"]
+[ext_resource type="Script" path="res://50. Dialogue & Quest/custom_resources/dialogue.gd" id="1_blaeu"]
+[ext_resource type="Texture2D" uid="uid://bndm4b5stituu" path="res://50. Dialogue & Quest/assets/cat_man_eyes.png" id="2_qvld7"]
+
+[resource]
+script = ExtResource("1_blaeu")
+texture = ExtResource("2_qvld7")
+name = "Cat Man"
+dialogue = "I am Hungry!"
+path_option = "Can I help you?"
+options = Array[ExtResource("1_blaeu")]([ExtResource("1_2448c")])

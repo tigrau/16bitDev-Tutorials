@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyb3us2by8d8c"]
+
+[ext_resource type="Theme" uid="uid://bnhafc3h7xv8x" path="res://50. Dialogue & Quest/custom_resources/theme_to_change_font.tres" id="1_ett2t"]
+[ext_resource type="Script" path="res://50. Dialogue & Quest/scenes/quest_button.gd" id="2_4qdd4"]
+
+[node name="QuestButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_ett2t")
+script = ExtResource("2_4qdd4")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

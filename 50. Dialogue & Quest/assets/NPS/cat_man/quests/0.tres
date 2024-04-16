@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=3 format=3 uid="uid://catjqt7bnf12x"]
+
+[ext_resource type="Resource" uid="uid://c3tmt4a35v77i" path="res://50. Dialogue & Quest/assets/NPS/cat_man/dialogues/3.tres" id="1_1ot07"]
+[ext_resource type="Script" path="res://50. Dialogue & Quest/custom_resources/quest.gd" id="1_xuee1"]
+
+[resource]
+script = ExtResource("1_xuee1")
+title = "Cat Food"
+description = "Bring Cat Food"
+objective = "Fetch"
+object = "Rocks"
+status = ""
+next_questline = ExtResource("1_1ot07")

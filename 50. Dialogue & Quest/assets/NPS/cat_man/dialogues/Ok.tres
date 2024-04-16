@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://dxvalmmpar30o"]
+
+[ext_resource type="Script" path="res://50. Dialogue & Quest/custom_resources/dialogue.gd" id="1_hfwd0"]
+
+[resource]
+script = ExtResource("1_hfwd0")
+name = "Cat Man"
+dialogue = ""
+path_option = "Ok."
+options = Array[ExtResource("1_hfwd0")]([])

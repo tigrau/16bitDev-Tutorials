@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=5 format=3 uid="uid://dbf078f5sixjv"]
+
+[ext_resource type="Resource" uid="uid://dxvalmmpar30o" path="res://50. Dialogue & Quest/assets/NPS/cat_man/dialogues/Ok.tres" id="1_23rj0"]
+[ext_resource type="Script" path="res://50. Dialogue & Quest/custom_resources/dialogue.gd" id="1_niitp"]
+[ext_resource type="Texture2D" uid="uid://j65p4x74fip0" path="res://50. Dialogue & Quest/assets/cat_man_bad.png" id="2_c5i35"]
+[ext_resource type="Resource" uid="uid://catjqt7bnf12x" path="res://50. Dialogue & Quest/assets/NPS/cat_man/quests/0.tres" id="2_ndtej"]
+
+[resource]
+script = ExtResource("1_niitp")
+texture = ExtResource("2_c5i35")
+name = "Cat Man"
+dialogue = "I want to eat rocks!"
+path_option = "What do you want to eat?"
+options = Array[ExtResource("1_niitp")]([ExtResource("1_23rj0")])
+quest = ExtResource("2_ndtej")
