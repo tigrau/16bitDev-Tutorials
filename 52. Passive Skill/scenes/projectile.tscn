@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://bdhdfleuvt1x8"]
+
+[ext_resource type="Script" path="res://52. Passive Skill/scenes/projectile.gd" id="1_0wdr1"]
+[ext_resource type="Texture2D" uid="uid://d0qgli65p5nff" path="res://52. Passive Skill/fire_fx_v1.0/png/orange/loops/burning_loop_3.png" id="1_bn15p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqbwx"]
+size = Vector2(22, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wrre"]
+atlas = ExtResource("1_bn15p")
+region = Rect2(0, 0, 15, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egx1q"]
+atlas = ExtResource("1_bn15p")
+region = Rect2(15, 0, 15, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kre72"]
+atlas = ExtResource("1_bn15p")
+region = Rect2(30, 0, 15, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3t3bl"]
+atlas = ExtResource("1_bn15p")
+region = Rect2(45, 0, 15, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adv3w"]
+atlas = ExtResource("1_bn15p")
+region = Rect2(60, 0, 15, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdkts"]
+atlas = ExtResource("1_bn15p")
+region = Rect2(75, 0, 15, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75axb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wrre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egx1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kre72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3t3bl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adv3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdkts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 18.0
+}]
+
+[node name="Projectile" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_0wdr1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_tqbwx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_75axb")
+autoplay = "default"
+frame_progress = 0.195419
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Damage51" load_steps=2 format=3 uid="uid://dhcu475olhlnl"]
+
+[ext_resource type="Script" path="res://damage.gd" id="1_irifr"]
+
+[resource]
+script = ExtResource("1_irifr")
+amount = 150.0
+type = "Fire"

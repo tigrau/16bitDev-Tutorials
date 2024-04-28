@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://1vmou8y82h05"]
+
+[ext_resource type="PackedScene" uid="uid://cyn1moojb5ea5" path="res://52. Passive Skill/scenes/knight.tscn" id="1_5dr8p"]
+[ext_resource type="PackedScene" uid="uid://0lqpiga6vrrl" path="res://52. Passive Skill/scenes/enemy.tscn" id="2_16try"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Knight" parent="." instance=ExtResource("1_5dr8p")]
+position = Vector2(213, 177)
+
+[node name="Enemy" parent="." instance=ExtResource("2_16try")]
+position = Vector2(676, 154)

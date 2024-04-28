@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg476kxldec4p"]
+
+[ext_resource type="Texture2D" uid="uid://b8k0kgiyknbyx" path="res://30. Necromancer - Boss FSM/assets/Skeleton enemy.png" id="1_04lh0"]
+[ext_resource type="Script" path="res://51. Combat Skill/scenes/enemy.gd" id="1_706w4"]
+[ext_resource type="PackedScene" uid="uid://dfwq1jmlliqln" path="res://51. Combat Skill/scenes/floating_text.tscn" id="2_05nc4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_comw8"]
+size = Vector2(33, 33)
+
+[node name="Enemy" type="CharacterBody2D"]
+z_index = -1
+script = ExtResource("1_706w4")
+floating_text_node = ExtResource("2_05nc4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_04lh0")
+flip_h = true
+hframes = 17
+vframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_comw8")

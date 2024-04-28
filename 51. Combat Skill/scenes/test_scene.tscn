@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dojm6vlwphrkf"]
+
+[ext_resource type="PackedScene" uid="uid://du0rui4hb4q1u" path="res://51. Combat Skill/scenes/knight.tscn" id="1_bhjee"]
+[ext_resource type="PackedScene" uid="uid://dg476kxldec4p" path="res://51. Combat Skill/scenes/enemy.tscn" id="2_bx67g"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Knight" parent="." instance=ExtResource("1_bhjee")]
+position = Vector2(385, 264)
+
+[node name="Enemy" parent="." instance=ExtResource("2_bx67g")]
+position = Vector2(588, 263)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(503, 266)
+zoom = Vector2(2, 2)

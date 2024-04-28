@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3xu4njt5kuqm"]
+
+[ext_resource type="Script" path="res://51. Combat Skill/scenes/placement_skill.gd" id="1_dvsos"]
+
+[node name="PlacementSkill" type="TextureButton"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("1_dvsos")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
