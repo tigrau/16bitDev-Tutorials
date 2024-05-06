@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1ml3w2c35kyt"]
+
+[ext_resource type="Script" path="res://53. Bezier Curve/scenes/projectile.gd" id="1_esoru"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_n0x36"]
+size = Vector2(20, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otfox"]
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_esoru")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = SubResource("PlaceholderTexture2D_n0x36")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_otfox")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

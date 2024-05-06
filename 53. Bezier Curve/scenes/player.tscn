@@ -1,0 +1,94 @@
+[gd_scene load_steps=14 format=3 uid="uid://c4kcg14nl4rfw"]
+
+[ext_resource type="Script" path="res://53. Bezier Curve/scenes/player.gd" id="1_d6bps"]
+[ext_resource type="PackedScene" uid="uid://c1ml3w2c35kyt" path="res://53. Bezier Curve/scenes/projectile.tscn" id="2_yqld3"]
+[ext_resource type="Script" path="res://53. Bezier Curve/scripts/skill_button.gd" id="3_x4idg"]
+[ext_resource type="Script" path="res://53. Bezier Curve/scripts/crescent_strike.gd" id="4_aki58"]
+[ext_resource type="Script" path="res://53. Bezier Curve/scripts/wild_axe.gd" id="5_jmlac"]
+[ext_resource type="Script" path="res://53. Bezier Curve/scripts/hook.gd" id="6_cf28c"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_t3kuo"]
+size = Vector2(20, 20)
+
+[sub_resource type="InputEventKey" id="InputEventKey_ky0rq"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_cf3u5"]
+events = [SubResource("InputEventKey_ky0rq")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_nct75"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_3ej2p"]
+events = [SubResource("InputEventKey_nct75")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_ax3ro"]
+device = -1
+keycode = 51
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_7v85c"]
+events = [SubResource("InputEventKey_ax3ro")]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_d6bps")
+projectile_node = ExtResource("2_yqld3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 1, 1, 1)
+texture = SubResource("PlaceholderTexture2D_t3kuo")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ActrionBar" type="HBoxContainer" parent="UI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SkillButton" type="TextureButton" parent="UI/ActrionBar"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+shortcut = SubResource("Shortcut_cf3u5")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("3_x4idg")
+skill = ExtResource("4_aki58")
+
+[node name="SkillButton2" type="TextureButton" parent="UI/ActrionBar"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+shortcut = SubResource("Shortcut_3ej2p")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("3_x4idg")
+skill = ExtResource("5_jmlac")
+
+[node name="SkillButton3" type="TextureButton" parent="UI/ActrionBar"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+shortcut = SubResource("Shortcut_7v85c")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("3_x4idg")
+skill = ExtResource("6_cf28c")
+
+[node name="Line2D" type="Line2D" parent="UI"]
+unique_name_in_owner = true
+points = PackedVector2Array(0, 0, 0, 0)
+width = 6.0
+default_color = Color(1, 0, 0.247059, 1)
+
+[connection signal="pressed" from="UI/ActrionBar/SkillButton" to="UI/ActrionBar/SkillButton" method="_on_pressed"]
+[connection signal="pressed" from="UI/ActrionBar/SkillButton2" to="UI/ActrionBar/SkillButton2" method="_on_pressed"]
+[connection signal="pressed" from="UI/ActrionBar/SkillButton3" to="UI/ActrionBar/SkillButton3" method="_on_pressed"]

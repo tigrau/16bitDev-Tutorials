@@ -1,7 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyn1moojb5ea5"]
+[gd_scene load_steps=22 format=3 uid="uid://cyn1moojb5ea5"]
 
 [ext_resource type="Texture2D" uid="uid://cspo5r7ytg0jq" path="res://51. Combat Skill/Elementals_fire_knight_FREE_v1.1/spritesheets/fire_FREE_SpriteSheet_288x128.png" id="1_lx5v8"]
 [ext_resource type="Script" path="res://52. Passive Skill/scenes/knight.gd" id="1_sd4cs"]
+[ext_resource type="PackedScene" uid="uid://ckduwx1rfg2qc" path="res://52. Passive Skill/scenes/floating_text.tscn" id="2_33ivc"]
+[ext_resource type="Script" path="res://52. Passive Skill/scenes/aura.gd" id="3_i7s7d"]
+[ext_resource type="Script" path="res://52. Passive Skill/scenes/skill_slot.gd" id="4_04djv"]
+[ext_resource type="Script" path="res://52. Passive Skill/scripts/Regen.gd" id="5_pg4my"]
+[ext_resource type="Script" path="res://52. Passive Skill/scripts/Obratka.gd" id="6_iojlb"]
+[ext_resource type="Script" path="res://52. Passive Skill/scripts/Evasion.gd" id="7_dg7a3"]
+[ext_resource type="Script" path="res://52. Passive Skill/scripts/LifeSteal.gd" id="8_m4k81"]
+[ext_resource type="Script" path="res://52. Passive Skill/scripts/Aura52.gd" id="9_3iuxp"]
 
 [sub_resource type="Animation" id="Animation_axy54"]
 length = 0.001
@@ -145,9 +153,50 @@ size = Vector2(43, 79)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gxav"]
 size = Vector2(37, 42)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ii56o"]
+radius = 101.178
+
+[sub_resource type="Animation" id="Animation_dmyvb"]
+resource_name = "DamageOverTime"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_eijso"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1xsxh"]
+_data = {
+"DamageOverTime": SubResource("Animation_dmyvb"),
+"RESET": SubResource("Animation_eijso")
+}
+
 [node name="Knight" type="CharacterBody2D"]
 collision_mask = 2
 script = ExtResource("1_sd4cs")
+floating_text_node = ExtResource("2_33ivc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -64)
@@ -164,6 +213,8 @@ autoplay = "idle"
 
 [node name="Hitbox" type="Area2D" parent="."]
 unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(46.5, -40.5)
@@ -183,3 +234,74 @@ value = 200.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, -21)
 shape = SubResource("RectangleShape2D_1gxav")
+
+[node name="Aura" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("3_i7s7d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Aura"]
+shape = SubResource("CircleShape2D_ii56o")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Aura"]
+libraries = {
+"": SubResource("AnimationLibrary_1xsxh")
+}
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ActionBar" type="HBoxContainer" parent="UI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SkillSlot" type="TextureRect" parent="UI/ActionBar"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("4_04djv")
+skill_class = ExtResource("5_pg4my")
+
+[node name="SkillSlot2" type="TextureRect" parent="UI/ActionBar"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("4_04djv")
+skill_class = ExtResource("6_iojlb")
+
+[node name="SkillSlot3" type="TextureRect" parent="UI/ActionBar"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("4_04djv")
+skill_class = ExtResource("7_dg7a3")
+
+[node name="SkillSlot4" type="TextureRect" parent="UI/ActionBar"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("4_04djv")
+skill_class = ExtResource("8_m4k81")
+
+[node name="SkillSlot5" type="TextureRect" parent="UI/ActionBar"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("4_04djv")
+skill_class = ExtResource("9_3iuxp")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Aura" to="Aura" method="_on_body_entered"]
