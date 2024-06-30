@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://x1jc8pkf7pl0"]
+
+[ext_resource type="Texture2D" uid="uid://dshxem3w58ceg" path="res://32. Item System & Inventroy/assets/head.png" id="1_0em7g"]
+[ext_resource type="Script" path="res://54. Day and Night/scenes/cat_npc.gd" id="1_74ycn"]
+[ext_resource type="Texture2D" uid="uid://b8k0kgiyknbyx" path="res://30. Necromancer - Boss FSM/assets/Skeleton enemy.png" id="2_vctv8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aa3hf"]
+atlas = ExtResource("2_vctv8")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqwph"]
+atlas = ExtResource("2_vctv8")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qssj"]
+atlas = ExtResource("2_vctv8")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h1gld"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0em7g")
+}],
+"loop": true,
+"name": &"sleep",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aa3hf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqwph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qssj")
+}],
+"loop": true,
+"name": &"wake_up",
+"speed": 10.0
+}]
+
+[node name="CatNPC" type="CharacterBody2D" groups=["NPC"]]
+script = ExtResource("1_74ycn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_h1gld")
+animation = &"wake_up"
+autoplay = "wake_up"

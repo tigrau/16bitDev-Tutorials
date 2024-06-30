@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dw3ntrggfwr3g"]
+
+[ext_resource type="Texture2D" uid="uid://dwt3a1apxr0ri" path="res://54. Day and Night/assets/Lantern.png" id="1_g8ut6"]
+[ext_resource type="Script" path="res://lantern.gd" id="2_kjav2"]
+
+[sub_resource type="Gradient" id="Gradient_bwehv"]
+offsets = PackedFloat32Array(0, 0.474026, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.792208, 0.792208, 0.792208, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lakrh"]
+gradient = SubResource("Gradient_bwehv")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.830275, 0.169725)
+
+[node name="Lantern" type="Sprite2D" groups=["LightSource"]]
+texture = ExtResource("1_g8ut6")
+script = ExtResource("2_kjav2")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(2, 2)
+enabled = false
+color = Color(1, 1, 0.501961, 1)
+texture = SubResource("GradientTexture2D_lakrh")
