@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://boaih2s11sxv"]
+
+[ext_resource type="PackedScene" uid="uid://d2gxo567jv7j6" path="res://55. Boss Fight Animation Tree/scenes/boss.tscn" id="1_hdv51"]
+[ext_resource type="PackedScene" uid="uid://bwm11df7y72yb" path="res://55. Boss Fight Animation Tree/scenes/cat_man.tscn" id="2_h2bpx"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Boss" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_hdv51")]
+position = Vector2(444, 372)
+scale = Vector2(4, 4)
+player = NodePath("../CatMan")
+
+[node name="CatMan" parent="." instance=ExtResource("2_h2bpx")]
+position = Vector2(986, 348)

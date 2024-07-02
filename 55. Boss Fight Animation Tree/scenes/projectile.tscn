@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://cju7hdgr0wb06"]
+
+[ext_resource type="Texture2D" uid="uid://c2cas5gmbsp1" path="res://55. Boss Fight Animation Tree/assets/projectile_and_trap/trap_land/trap_land_1.png" id="1_2edlj"]
+[ext_resource type="Script" path="res://55. Boss Fight Animation Tree/scenes/projectile.gd" id="1_ei5vy"]
+[ext_resource type="Texture2D" uid="uid://2840m0i43804" path="res://55. Boss Fight Animation Tree/assets/projectile_and_trap/projectile_throw/projectile_throw.png" id="2_7l3tx"]
+[ext_resource type="Texture2D" uid="uid://ubydqcqb5ke5" path="res://55. Boss Fight Animation Tree/assets/projectile_and_trap/trap_land/trap_land_2.png" id="2_bagj6"]
+[ext_resource type="Texture2D" uid="uid://b1dojedyjb286" path="res://55. Boss Fight Animation Tree/assets/projectile_and_trap/trap_land/trap_land_3.png" id="3_0efkb"]
+
+[sub_resource type="Animation" id="Animation_odnh0"]
+resource_name = "land_1"
+length = 0.333342
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_2edlj"), ExtResource("2_bagj6"), ExtResource("3_0efkb")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_xveeq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_7l3tx")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mttii"]
+_data = {
+"RESET": SubResource("Animation_xveeq"),
+"land_1": SubResource("Animation_odnh0")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71jqf"]
+size = Vector2(76, 55)
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_ei5vy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -61)
+scale = Vector2(4, 4)
+texture = ExtResource("2_7l3tx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mttii")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -29.5)
+shape = SubResource("RectangleShape2D_71jqf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

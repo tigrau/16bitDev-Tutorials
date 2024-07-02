@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwm11df7y72yb"]
+
+[ext_resource type="Script" path="res://55. Boss Fight Animation Tree/scenes/cat_man.gd" id="1_b0572"]
+[ext_resource type="PackedScene" uid="uid://cj1rean6a6ys1" path="res://55. Boss Fight Animation Tree/scenes/banana_projectile.tscn" id="2_guqfd"]
+[ext_resource type="Texture2D" uid="uid://dxxly27qmg6kv" path="res://51. Combat Skill/Elementals_fire_knight_FREE_v1.1/fire_knight.png" id="2_j14kh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nn1vo"]
+size = Vector2(60, 60)
+
+[sub_resource type="Animation" id="Animation_acs4i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v8ifc"]
+resource_name = "hit"
+length = 0.30001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(10, 10, 10, 1), Color(10, 10, 10, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bxi8a"]
+_data = {
+"RESET": SubResource("Animation_acs4i"),
+"hit": SubResource("Animation_v8ifc")
+}
+
+[node name="CatMan" type="CharacterBody2D"]
+script = ExtResource("1_b0572")
+banana_node = ExtResource("2_guqfd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_j14kh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nn1vo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bxi8a")
+}

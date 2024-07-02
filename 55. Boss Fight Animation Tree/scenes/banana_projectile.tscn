@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj1rean6a6ys1"]
+
+[ext_resource type="Script" path="res://55. Boss Fight Animation Tree/scenes/banana_projectile.gd" id="1_0hx0g"]
+[ext_resource type="Texture2D" uid="uid://brcsyisrep72q" path="res://29. Golem Boss - FSM/assets/weapon PNG/arm_projectile.png" id="2_fit1y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rf7ty"]
+size = Vector2(122, 42)
+
+[node name="BananaProjectile" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_0hx0g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-114, 51)
+scale = Vector2(4, 4)
+texture = ExtResource("2_fit1y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rf7ty")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
