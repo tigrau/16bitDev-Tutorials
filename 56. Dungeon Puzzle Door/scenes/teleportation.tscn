@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cf6wijovdmchy"]
+
+[ext_resource type="Texture2D" uid="uid://c81xglna55g1t" path="res://56. Dungeon Puzzle Door/assets/runes/1.png" id="1_1kypt"]
+[ext_resource type="Script" path="res://56. Dungeon Puzzle Door/scenes/teleportation.gd" id="1_ly8a3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fex0"]
+size = Vector2(52, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xg6w2"]
+size = Vector2(54, 62)
+
+[node name="Teleportation" type="Node2D"]
+script = ExtResource("1_ly8a3")
+
+[node name="Enter" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Enter"]
+texture = ExtResource("1_1kypt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enter"]
+shape = SubResource("RectangleShape2D_4fex0")
+
+[node name="Exit" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Exit"]
+texture = ExtResource("1_1kypt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+shape = SubResource("RectangleShape2D_xg6w2")
+
+[connection signal="body_entered" from="Enter" to="." method="_on_enter_body_entered"]
+[connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]

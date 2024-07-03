@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsqoxxiitq300"]
+
+[ext_resource type="Script" path="res://56. Dungeon Puzzle Door/scenes/weighted_puzzle.gd" id="1_u86mp"]
+[ext_resource type="Texture2D" uid="uid://rgrwp0xx4v0m" path="res://56. Dungeon Puzzle Door/assets/Button - PS Blank 1.png" id="2_ydn3g"]
+[ext_resource type="Texture2D" uid="uid://cb6y5xlcsva3k" path="res://56. Dungeon Puzzle Door/assets/Button - PS Blank 2.png" id="3_gjxaj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b6yj5"]
+radius = 201.993
+
+[node name="WeightedPuzzle" type="Area2D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_u86mp")
+
+[node name="Up" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_ydn3g")
+
+[node name="Down" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("3_gjxaj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b6yj5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

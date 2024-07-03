@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://mhn3a1rv25a3"]
+
+[ext_resource type="Texture2D" uid="uid://cw5fuhduf7xbp" path="res://56. Dungeon Puzzle Door/assets/Dungeon_Tileset.png" id="1_b4341"]
+[ext_resource type="Script" path="res://56. Dungeon Puzzle Door/scenes/door.gd" id="2_qqpxh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggrfn"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5d3s3"]
+size = Vector2(18, 18)
+
+[node name="Door" type="Sprite2D"]
+texture = ExtResource("1_b4341")
+region_enabled = true
+region_rect = Rect2(112, 48, 16, 16)
+script = ExtResource("2_qqpxh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="DoorCollision" type="CollisionShape2D" parent="StaticBody2D"]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_ggrfn")
+
+[node name="CloseDoor" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloseDoor"]
+position = Vector2(0, -17)
+shape = SubResource("RectangleShape2D_5d3s3")
+
+[connection signal="body_entered" from="CloseDoor" to="." method="_on_body_entered"]
