@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item57" load_steps=3 format=3 uid="uid://cttm7rg4kd8ha"]
+
+[ext_resource type="Script" path="res://57. Popup Tooltip/resource/Item.gd" id="1_vw442"]
+[ext_resource type="Texture2D" uid="uid://bx56uttxkrcp3" path="res://57. Popup Tooltip/assets/Axe.png" id="2_h8dyj"]
+
+[resource]
+script = ExtResource("1_vw442")
+name = "Axe"
+rarity = "Rare"
+level = 7
+texture = ExtResource("2_h8dyj")
+attribute_type = "Strength"
+attribute_value = 5

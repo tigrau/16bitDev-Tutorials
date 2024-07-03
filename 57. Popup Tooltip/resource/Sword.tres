@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item57" load_steps=3 format=3 uid="uid://bdneahlngn171"]
+
+[ext_resource type="Script" path="res://57. Popup Tooltip/resource/Item.gd" id="1_iwykk"]
+[ext_resource type="Texture2D" uid="uid://cpay8kihi2gm" path="res://57. Popup Tooltip/assets/Sword.png" id="2_xw30a"]
+
+[resource]
+script = ExtResource("1_iwykk")
+name = "Sword"
+rarity = "Epic"
+level = 15
+texture = ExtResource("2_xw30a")
+attribute_type = "Strength"
+attribute_value = 22

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item57" load_steps=3 format=3 uid="uid://bup7b6gc7hvgp"]
+
+[ext_resource type="Script" path="res://57. Popup Tooltip/resource/Item.gd" id="1_2lva5"]
+[ext_resource type="Texture2D" uid="uid://xdcnkwf4hl72" path="res://57. Popup Tooltip/assets/Staff Gem.png" id="2_6wx8a"]
+
+[resource]
+script = ExtResource("1_2lva5")
+name = "Staff"
+rarity = "Rare"
+level = 9
+texture = ExtResource("2_6wx8a")
+attribute_type = "Intelligence"
+attribute_value = 12

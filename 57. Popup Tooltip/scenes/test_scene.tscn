@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dudsf8ereuagm"]
+
+[ext_resource type="PackedScene" uid="uid://c526rnl3qaogs" path="res://57. Popup Tooltip/scenes/slot.tscn" id="1_h1scs"]
+[ext_resource type="Resource" uid="uid://cttm7rg4kd8ha" path="res://57. Popup Tooltip/resource/Axe.tres" id="2_ea3w4"]
+[ext_resource type="Resource" uid="uid://dionms6uch7e8" path="res://57. Popup Tooltip/resource/Battle_Axe.tres" id="3_yxgyp"]
+[ext_resource type="Resource" uid="uid://bup7b6gc7hvgp" path="res://57. Popup Tooltip/resource/Shield.tres" id="4_hvr5v"]
+[ext_resource type="Resource" uid="uid://dsswtmfo4kbgt" path="res://57. Popup Tooltip/resource/Staff.tres" id="5_ra43v"]
+[ext_resource type="Resource" uid="uid://bdneahlngn171" path="res://57. Popup Tooltip/resource/Sword.tres" id="6_lvrsn"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ActionBar" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -292.0
+offset_top = -80.0
+offset_right = 292.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Slot" parent="CanvasLayer/ActionBar" instance=ExtResource("1_h1scs")]
+layout_mode = 2
+item = ExtResource("2_ea3w4")
+
+[node name="Slot2" parent="CanvasLayer/ActionBar" instance=ExtResource("1_h1scs")]
+layout_mode = 2
+item = ExtResource("3_yxgyp")
+
+[node name="Slot3" parent="CanvasLayer/ActionBar" instance=ExtResource("1_h1scs")]
+layout_mode = 2
+item = ExtResource("4_hvr5v")
+
+[node name="Slot4" parent="CanvasLayer/ActionBar" instance=ExtResource("1_h1scs")]
+layout_mode = 2
+item = ExtResource("5_ra43v")
+
+[node name="Slot5" parent="CanvasLayer/ActionBar" instance=ExtResource("1_h1scs")]
+layout_mode = 2
+item = ExtResource("6_lvrsn")
+
+[node name="Slot6" parent="CanvasLayer/ActionBar" instance=ExtResource("1_h1scs")]
+layout_mode = 2
+
+[node name="Slot7" parent="CanvasLayer/ActionBar" instance=ExtResource("1_h1scs")]
+layout_mode = 2

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item57" load_steps=3 format=3 uid="uid://dionms6uch7e8"]
+
+[ext_resource type="Script" path="res://57. Popup Tooltip/resource/Item.gd" id="1_rddjq"]
+[ext_resource type="Texture2D" uid="uid://bbdwko3bkhgao" path="res://57. Popup Tooltip/assets/Battle Axe.png" id="2_7di25"]
+
+[resource]
+script = ExtResource("1_rddjq")
+name = "Battle Axe LONG NAME"
+rarity = "Legendary"
+level = 12
+texture = ExtResource("2_7di25")
+attribute_type = "Strength"
+attribute_value = 15

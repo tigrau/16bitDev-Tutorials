@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://c526rnl3qaogs"]
+
+[ext_resource type="Script" path="res://57. Popup Tooltip/scenes/slot.gd" id="1_uii3f"]
+
+[node name="Slot" type="PanelContainer"]
+custom_minimum_size = Vector2(80, 80)
+offset_left = 148.0
+offset_top = 92.0
+offset_right = 188.0
+offset_bottom = 132.0
+script = ExtResource("1_uii3f")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 2
+mouse_filter = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

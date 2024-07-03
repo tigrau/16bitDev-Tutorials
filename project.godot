@@ -23,6 +23,7 @@ Persistence="*res://37. Main menu/persistence.gd"
 Manager="*res://49. JRPG Random Encounter/scenes/manager.tscn"
 DialogueManager="*res://50. Dialogue & Quest/scenes/dialogue_manager.tscn"
 QuestManager="*res://50. Dialogue & Quest/scenes/quest_manager.tscn"
+Popups="*res://57. Popup Tooltip/scenes/popups.tscn"
 
 [display]
 
@@ -38,7 +39,10 @@ folder_colors={
 "res://36. Crafting System/assets/": "red",
 "res://36. Crafting System/resources/": "orange",
 "res://36. Crafting System/scenes/": "yellow",
-"res://36. Crafting System/scripts/": "green"
+"res://36. Crafting System/scripts/": "green",
+"res://57. Popup Tooltip/assets/": "red",
+"res://57. Popup Tooltip/resource/": "orange",
+"res://57. Popup Tooltip/scenes/": "yellow"
 }
 
 [input]
